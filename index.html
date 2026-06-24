@@ -35,10 +35,8 @@
         content="Engineering leader who ships AI from pilot to production - and grows the people who keep it there. Copenhagen · Remote.">
     <meta name="twitter:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
 
-    <!-- Inter font, loaded from Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Inter font, self-hosted (woff2, Latin subset) -->
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
 
     <script type="application/ld+json">
   {
@@ -61,11 +59,12 @@
   </script>
 
     <style>
+        @font-face{font-family:'Inter';font-style:normal;font-weight:100 900;font-display:swap;src:url('/fonts/inter-latin-var.woff2') format('woff2')}
         :root {
             --bg: #f6f6f4;
             --ink: #101010;
             --muted: #6e6e6c;
-            --faint: #a6a6a2;
+            --faint: #6b6b67;
             --line: #dcdcd6;
             --accent: #101010;
             --sans: 'Inter', 'Helvetica Neue', Helvetica, Arial, sans-serif;
@@ -182,8 +181,8 @@
                 <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(40px,6vw,72px)">
                     <span
                         style="font-family:var(--mono);font-size:12px;letter-spacing:0.14em;color:var(--accent)">(01)</span>
-                    <span
-                        style="font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)">About</span>
+                    <h2
+                        style="font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin:0">About</h2>
                 </div>
                 <div
                     style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:clamp(28px,5vw,80px)">
@@ -218,9 +217,9 @@
                 <div style="display:flex;align-items:baseline;gap:16px;margin-bottom:clamp(24px,4vw,48px)">
                     <span
                         style="font-family:var(--mono);font-size:12px;letter-spacing:0.14em;color:var(--accent)">(02)</span>
-                    <span
-                        style="font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted)">Services
-                        - How I can help</span>
+                    <h2
+                        style="font-family:var(--mono);font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--muted);margin:0">Services
+                        - How I can help</h2>
                 </div>
                 <div>
 
