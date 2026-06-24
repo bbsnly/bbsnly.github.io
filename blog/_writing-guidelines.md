@@ -26,6 +26,7 @@ Readers are engineering leaders, EMs and directors, senior+ engineers, and prosp
 
 - The blog is a positioning and SEO asset. Each post builds credibility, serves a real search intent, and reads as the work of a senior practitioner.
 - Write to one smart peer. The litmus for "don't over-explain": never define a term the reader searched to find this post, and never walk through basics a senior+ practitioner does daily.
+- Watch the curse of knowledge — the opposite failure, and the more common one for an expert. Once you know something you can't easily feel what not knowing it was like, so you skip the step, leave *your* jargon undefined, or drop the reasoning that makes the point land. Calibrating to a peer guards against over-explaining; this guards against leaving the load-bearing context in your head. Name the concrete referent, walk the one inferential step that isn't obvious, show the example (see Sources, Pinker; Heath).
 - Respect their time. The payoff lands on the first screen — inside the first ~100 words — not after a warm-up.
 - Three themes anchor the blog: engineering leadership, moving AI from pilot to production, and building software teams. Keep posts inside them and interlink siblings (at least two related posts per piece) rather than scattering one-offs.
 
@@ -38,7 +39,7 @@ The bolded leads below are imperative on purpose — this is a spec, not prose. 
 - **Lead with one debatable thesis** in the first one or two paragraphs. If no reasonable expert would disagree, it isn't a thesis. "AI is changing engineering" fails. "Most AI coding pilots die in the gap between the demo and the maintenance burden" works. (Team example: "Hiring senior engineers to fix a junior-heavy team usually makes onboarding worse before it helps.")
 - **Contest an assumption the reader holds.** Name the common belief, then show where it breaks in practice.
 - **Support every non-obvious claim** with a specific number, a named case, a firsthand detail, or a cited source — at least one proof point per major section. Nothing floats unsupported.
-- **Show the instance, not the adjective.** "Onboarding was slow" tells; "the third engineer in a row hit the same undocumented auth step and lost a day" shows.
+- **Show the instance, not the adjective.** "Onboarding was slow" tells; "the third engineer in a row hit the same undocumented auth step and lost a day" shows. Concrete detail also reads as credibility, not just color: a specific number or named instance shows you did the work, where vague language signals you didn't and seeds doubt (see Sources, Packard & Berger; GIJN).
 - **Earn authority through a lived incident**, not a credential.
 - **Steelman the opposing view first.** State the strongest version of the counterargument and concede what's true in it before you show why your position holds. Caricature reads as dishonest and makes the reader defensive.
 - **Add what the top ten search results lack:** a contrarian read, a second-order effect they missed, the specific mechanism, a number from your own work. A post that only restates the consensus gets reframed or killed.
@@ -60,6 +61,8 @@ The bolded leads below are imperative on purpose — this is a spec, not prose. 
 
 Most readers scan rather than read, tracing an F-shaped path: two sweeps across the top, then down the left edge (see Sources, NN/g). Lead with the conclusion so the reader who quits after one paragraph still gets the point.
 
+That F-path is a fallback, not a target. Readers default to it when the page is an undifferentiated wall of text with nothing to catch the eye, and it makes them miss anything sitting on the right side of a line. Clear, descriptive subheadings — plus bold and lists — pull the eye into a better scan (NN/g calls it the "layer-cake" pattern: read the headings, drop into the prose that matters). Structure is what earns you the more thorough reader; don't design *for* the F, design it away (see Sources, NN/g, layer-cake).
+
 A note on front-loading, which this doc demands in several places: put the load-bearing information first — first sentence of the post, first words of each subheading, first sentence of each paragraph, first clause of each sentence. One principle, applied at every level.
 
 **Openings**
@@ -67,7 +70,9 @@ A note on front-loading, which this doc demands in several places: put the load-
 - Open on the payload: a concrete claim, a real moment, a specific number, or a genuine non-obvious question. No warm-up.
 - For this voice, prefer the concrete claim or the lived moment over a question. Never open on a rhetorical question with an obvious answer.
 - Back a bold claim inside the same post, or you lose credibility faster than the opening earned attention.
+- An opening's whole job is to make the reader continue: pose a real question they can't yet answer, or make a promise and set up a tension the post will resolve. A consciously felt gap between what they know and what they want to know is what pulls them down the page (see Sources, Zinsser; Loewenstein).
 - Write the intro last, once you know what the piece argues. Keep it under ~150 words.
+- In revision, test cutting the first paragraph or two outright. First drafts warm up before they start, and the piece often begins better a few sentences in — where you stop clearing your throat and start sounding like yourself (see Sources, Zinsser).
 
 **Body**
 
@@ -78,6 +83,7 @@ A note on front-loading, which this doc demands in several places: put the load-
 **Subheadings**
 
 - Reading only the subheadings should tell the reader what the post argues.
+- Subheadings are the highest-payoff scannability decision in the post, but only on two conditions: each one stands out visually, and each one accurately summarizes the section beneath it. A subheading that decorates or misleads breaks the scan instead of guiding it.
 - Put the information-carrying word in the first two or three. Specific and concrete, never a pun. Aim for ~40–70 characters (roughly 5–9 words); enough to carry meaning, short enough to scan.
 
 **Layering**
@@ -109,6 +115,7 @@ One number set governs sentence length. The rhythm rules below use the same set.
 
 - **Average sentence: 15–20 words.** That's the average, not the ceiling. Comprehension stays high at short lengths and falls off sharply as sentences run long (see Sources, American Press Institute).
 - **Hard ceiling ~30 words.** Past 30, split it or cut a clause. One idea per sentence.
+- **Keep linked words close — distance is the real cost, not length.** Comprehension degrades as the gap widens between words that depend on each other: subject and verb, verb and object, a pronoun and what it refers to. The reader holds the first in a limited, decaying working memory until the second arrives. So a 28-word sentence with tight links can read easier than an 18-word one that strands its verb at the end. Above all, avoid center-embedding — a clause nested inside another that interrupts a dependency ("the engineer the manager the VP trusted hired quit"). One level is a strain; two stops parsing even when every word is simple (see Sources, Gibson, Dependency Locality Theory). This is the mechanism under the length rule: when a sentence gets hard, shorten the *dependencies*, not just the word count.
 - **Vary length on purpose.** Mix short sentences (3–10 words) with the 15–20 average and the occasional long one near the 30 ceiling. Never run three or more same-length sentences in a row — uniform cadence is the strongest statistical tell of machine writing.
 - **Use a one-line sentence for emphasis, rarely.** It's punctuation for a point, not a habit.
 - **One idea per paragraph.** A second topic means a new paragraph.
@@ -219,6 +226,8 @@ Also cut filler and windups: "it's important to note that," "it's worth noting,"
 
 With every banned word gone, scan for accumulated moves: parallelism, symmetric sections, a resolution ending, applause lines. Detectability is structural; it surfaces when signals stack. Pull the stack apart.
 
+**Don't over-polish.** The newest tell isn't a word — it's evenness. Measured against human writing, AI prose runs longer, more uniformly complex, more lexically diverse, and conspicuously *cleaner*, with every sentence sanded to the same finish (see Sources, Kobak et al.; Antislop; ScienceDirect 2026). The fix is not to insert errors. It's to leave the human texture in: a blunt three-word sentence next to a long one, a plain word repeated where a synonym would only preen, a digression, a section that runs short because the point was short. The lexical fingerprints (delve, underscore) are a moving target as models are retrained to suppress them; this structural over-smoothness is the more durable one.
+
 ## Editing & revision
 
 Revise in separate single-purpose passes. The brain can't catch wording and logic and typos at once.
@@ -246,6 +255,7 @@ Revise in separate single-purpose passes. The brain can't catch wording and logi
 - [ ] Title ~50–60 chars, front-loaded, stands alone, no stray year. Meta description ~150–160 chars.
 - [ ] Direct 40–55 word answer front-loaded after the H1; some headings phrased as searched questions.
 - [ ] Average sentence 15–20 words; none over ~30; length varied (no metronome).
+- [ ] Linked words kept close (subject–verb–object); no center-embedded/nested clauses.
 - [ ] Paragraphs 2–4 sentences; one idea each; front-loaded.
 - [ ] Active voice >90%; nominalizations converted to verbs.
 - [ ] First person; US spelling; past tense for anecdote, present for principle.
@@ -253,6 +263,7 @@ Revise in separate single-purpose passes. The brain can't catch wording and logi
 - [ ] 2–5 contextual internal links per ~1,000 words; descriptive anchors; at least two sibling posts linked; post stays inside the three themes.
 - [ ] External links to named practitioners' primary sources where used; code snippets short and real; images carry information and have alt text.
 - [ ] Banned words: zero. Banned structures: zero (negated contrast especially).
+- [ ] Not over-polished — human texture left in (uneven sentence/section lengths, no uniform smoothness); no inserted errors.
 - [ ] Em-dashes ≤1 per ~3 paragraphs; punctuation varied.
 - [ ] No recap closer; ends on the last real point or one clear next step.
 - [ ] Read aloud, fact-checked, no signature phrase repeated, no banned site phrase.
@@ -260,18 +271,18 @@ Revise in separate single-purpose passes. The brain can't catch wording and logi
 
 ## Sources
 
-**Reading on the web & structure** — Nielsen Norman Group: *Inverted Pyramid: Writing for Comprehension*; *F-Shaped Pattern of Reading on the Web*; *How Users Read on the Web*; *Microcontent: How to Write Headlines, Page Titles, and Subject Lines*; *Headings Are Pick-Up Lines*. Orbit Media, *7 Ways to Write Better Opening Paragraphs*. Uplift Content, *How to End a Blog Post with Maximum Impact*.
+**Reading on the web & structure** — Nielsen Norman Group: *Inverted Pyramid: Writing for Comprehension*; *F-Shaped Pattern of Reading on the Web* (and *...Pattern Discovered*, 232-user eyetracking); *The Layer-Cake Pattern of Scanning* and *Text Scanning Patterns: Eyetracking* (F → spotted → layer-cake → commitment; F-pattern as a failure mode of weak formatting); *How Users Read on the Web*; *How Little Do Users Read?*; *Microcontent: How to Write Headlines, Page Titles, and Subject Lines*; *Headings Are Pick-Up Lines*. Orbit Media, *7 Ways to Write Better Opening Paragraphs*. Uplift Content, *How to End a Blog Post with Maximum Impact*.
 
-**Sentence & readability mechanics** — plainlanguage.gov, *Federal Plain Language Guidelines*. CDC, *Plain Language Materials & Resources*. American Press Institute (comprehension vs. sentence length). Siteimprove (20-word flag). Baymard Institute & UXPin (50–75 CPL line length). Yoast & Elite Editing (Flesch Reading Ease bands). Get It Write (parallel lists); ClickHelp (when to use lists).
+**Sentence & readability mechanics** — plainlanguage.gov, *Federal Plain Language Guidelines*. CDC, *Plain Language Materials & Resources*. American Press Institute (comprehension vs. sentence length). Siteimprove (20-word flag). Gibson, *Linguistic complexity: locality of syntactic dependencies* (Cognition, 1998 — Dependency Locality Theory; center-embedding becomes unprocessable); Futrell, Gibson & Levy, *Lossy-Context Surprisal* (Cognitive Science, 2020 — information locality); Lewis, Vasishth & Van Dyke, *Computational principles of working memory in sentence comprehension* (Trends in Cognitive Sciences, 2006). Baymard Institute & UXPin (50–75 CPL line length). Yoast & Elite Editing (Flesch Reading Ease bands). Get It Write (parallel lists); ClickHelp (when to use lists).
 
-**Voice & style** — Orwell, *Politics and the English Language*. Zinsser, *On Writing Well* (via LitCharts). Williams & Bizup, *Style* (characters/actions, old-to-new cohesion). Strunk & White, *The Elements of Style* (Gotham Writers; Life Junctions).
+**Voice & style** — Orwell, *Politics and the English Language*. Zinsser, *On Writing Well* (clutter-cutting; the bracket technique; cutting the warm-up opening). Williams & Bizup, *Style* (characters/actions, old-to-new cohesion). Strunk & White, *The Elements of Style* (Gotham Writers; Life Junctions). Pinker, *The Sense of Style* (the curse of knowledge). Heath & Heath, *Made to Stick* (concreteness = human action + sensory detail; the curse of knowledge).
 
-**Substance & credibility** — 2025 Edelman-LinkedIn *B2B Thought Leadership Impact Report* and Edelman quality-gap analyses. HBR, *The Guru's Guide to Creating Thought Leadership* and *Contributor Guidelines for HBR Authors*. Thompson Editing (show, don't tell). Speaking About Presenting (credibility without bragging). The Steelman Approach (ArguFight).
+**Substance & credibility** — 2025 Edelman-LinkedIn *B2B Thought Leadership Impact Report* and Edelman quality-gap analyses. HBR, *The Guru's Guide to Creating Thought Leadership* and *Contributor Guidelines for HBR Authors*. Thompson Editing (show, don't tell). Packard & Berger, *How Concrete Language Shapes Customer Satisfaction* (Journal of Consumer Research, 2021 — concreteness reads as listening/credibility). GIJN, *How to Write Openings That Hook the Reader* (concreteness as proof-of-work; hook-and-twist). Loewenstein, *The Psychology of Curiosity* and Golman & Loewenstein (the information-gap model of curiosity). Green & Brock, *The Role of Transportation in the Persuasiveness of Public Narratives* (JPSP, 2000 — narrative transportation reduces counterarguing). Speaking About Presenting (credibility without bragging). The Steelman Approach (ArguFight).
 
 **SEO & E-E-A-T** — Google Search Central: *Creating Helpful, Reliable, People-First Content*; *E-A-T gets an extra E for Experience*; *Article structured data*; *SEO Link Best Practices*. W3C WAI, *Headings*. Zyppy & Destination Digital (title/meta length). Yoast (word count; headings). Backlinko (search intent; E-E-A-T). Seer Interactive (featured snippets). Semrush (internal links).
 
 **Engineering-leadership genre** — Will Larson, *Making engineering strategies more readable* and *Unexpected anti-patterns for engineering leaders*. Charity Majors and Gergely Orosz on technical blogging (*Write that blog!*; Blogging for Devs). Instant Press (thought-leadership mistakes).
 
-**AI-writing tells** — Kobak/Liang et al., *Delving into ChatGPT usage in academic writing through excess vocabulary* (Science Advances). FSU/ICCL "delve" study. Bloomberry, *AI Sentence DNA: 7,400+ AI Writing Patterns*. Wikipedia, *Signs of AI writing*. Matthew Vollmer, *A Field Guide to AI Tells*. The Conversation & FIU News (em-dash overuse).
+**AI-writing tells** — Kobak et al., *Delving into ChatGPT usage in academic writing through excess vocabulary* (Science Advances, 2025 — "delves" ~28×, "underscores" ~13.8×, "showcasing" ~10.7×; ≥13.5% of 2024 abstracts LLM-processed). Paech et al., *Antislop* (arXiv 2510.15061, 2025 — "slop" phrases appearing >1,000× human baseline; the "not just X but Y" construction named and suppressed). *AI vs. human prose* corpus comparison (ScienceDirect S2215039026000056, 2026 — AI text longer, more uniformly complex, higher lexical diversity, ~4× fewer errors; over-polish as a structural tell). FSU/ICCL "delve" study. Bloomberry, *AI Sentence DNA: 7,400+ AI Writing Patterns*. Wikipedia, *Signs of AI writing*. Matthew Vollmer, *A Field Guide to AI Tells*. The Conversation & FIU News (em-dash overuse).
 
-**Editing & revision** — University of Chicago Harris Writing Workshop (pruning needless words). UNR, GMU, Yale (known-new contract / cohesion). UNC & Duke writing centers (reading aloud). Medium Handbook, *A Self-Editing Checklist From an Editor-in-Chief*. Writer's Digest (omit needless words). Writing Mastery (kill your darlings).
+**Editing & revision** — University of Chicago Harris Writing Workshop (pruning needless words). McPhee, *Draft No. 4* (revision as the essence; read-aloud; box-the-word; dictionary over thesaurus; the bad first draft). UNR, GMU, Yale (known-new contract / cohesion). UNC & Duke writing centers (reading aloud). Medium Handbook, *A Self-Editing Checklist From an Editor-in-Chief*. Writer's Digest (omit needless words). Writing Mastery (kill your darlings).
