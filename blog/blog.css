@@ -1,0 +1,381 @@
+/* ============================================================
+   blog/blog.css — shared stylesheet for anatoliybabushka.com/blog/
+   Plain CSS, no build step, no dependencies.
+   Design decisions grounded in legibility research + WCAG 2.1.
+   ============================================================ */
+
+/* ----------------------------------------------------------
+   1. Self-hosted Inter (variable font, weights 100–900)
+   ---------------------------------------------------------- */
+@font-face {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 100 900;
+    font-display: swap;
+    src: url('/fonts/inter-latin-var.woff2') format('woff2');
+}
+
+/* ----------------------------------------------------------
+   2. Modern minimal reset
+   ---------------------------------------------------------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+img,
+picture,
+svg,
+video {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* ----------------------------------------------------------
+   3. Design tokens
+   Contrast ratios on --bg #f6f6f4:
+     --ink   #1a1a1a  → ~17 : 1  (WCAG AAA)
+     --muted #5a5a57  →  ~6 : 1  (WCAG AA)
+   ---------------------------------------------------------- */
+:root {
+    --bg:   #f6f6f4;
+    --ink:  #1a1a1a;
+    --muted: #5a5a57;
+    --line: #dcdcd6;
+
+    --sans: 'Inter', system-ui, -apple-system, 'Helvetica Neue', Arial, sans-serif;
+    --mono: ui-monospace, 'SF Mono', Menlo, Monaco, 'Liberation Mono', monospace;
+}
+
+/* ----------------------------------------------------------
+   4. Base typography
+   font-size: 1.125rem ≈ 18 px — sits in the research sweet
+   spot (16–20 px) for comfortable on-screen reading.
+   line-height: 1.65 — generous enough for long prose.
+   text-align: left — never justify (harms dyslexic readers
+   and produces uneven word-spacing at narrow column widths).
+   ---------------------------------------------------------- */
+body {
+    font-family: var(--sans);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    color: var(--ink);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    text-align: left;
+}
+
+/* ----------------------------------------------------------
+   5. Content column
+   max-width: 66ch — the ~66-character research optimum for
+   comfortable reading (Bringhurst, Baymard, WCAG advisory).
+   clamp() side padding means it never bleeds to the edge on
+   narrow viewports, and the content survives a 200% zoom.
+   ---------------------------------------------------------- */
+.wrap {
+    max-width: 66ch;
+    margin-inline: auto;
+    padding-inline: clamp(20px, 5vw, 28px);
+}
+
+/* ----------------------------------------------------------
+   6. Headings
+   rem units so they scale with the user's browser font
+   preference (WCAG 1.4.4 Resize Text).
+   line-height ~1.2 — tight enough for display, readable
+   enough to avoid crowding when headings wrap.
+   ---------------------------------------------------------- */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    color: var(--ink);
+}
+
+h1 { font-size: 2rem;    margin-block-start: 2.5rem; }
+h2 { font-size: 1.5rem;  margin-block-start: 2rem; }
+h3 { font-size: 1.25rem; margin-block-start: 1.75rem; }
+h4 { font-size: 1.125rem; margin-block-start: 1.5rem; }
+
+/* First heading in a page section needs no top gap */
+h1:first-child,
+h2:first-child,
+h3:first-child {
+    margin-block-start: 0;
+}
+
+/* ----------------------------------------------------------
+   7. Paragraphs & prose spacing
+   1em bottom margin ensures comfortable vertical rhythm.
+   ---------------------------------------------------------- */
+p {
+    margin-block: 1em;
+}
+
+p:last-child {
+    margin-block-end: 0;
+}
+
+/* ----------------------------------------------------------
+   8. Links
+   color: inherit — link text always inherits --ink, so it
+   passes WCAG 1.4.3 regardless of context.
+   underline-offset: keeps descenders visible.
+   focus-visible: 2 px solid ring — WCAG 2.4.7 Focus Visible.
+   ---------------------------------------------------------- */
+a {
+    color: inherit;
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+    text-decoration-thickness: 1px;
+}
+
+a:hover {
+    text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+    outline: 2px solid var(--ink);
+    outline-offset: 2px;
+    border-radius: 2px;
+}
+
+/* ----------------------------------------------------------
+   9. Lists
+   ---------------------------------------------------------- */
+ul,
+ol {
+    padding-inline-start: 1.4em;
+    margin-block: 1em;
+}
+
+li {
+    margin-block: 0.35em;
+}
+
+li:last-child {
+    margin-block-end: 0;
+}
+
+/* ----------------------------------------------------------
+   10. Blockquote
+   Left border + muted colour signals a quotation without
+   heavy chrome. Italic is conventional for attribution.
+   ---------------------------------------------------------- */
+blockquote {
+    border-inline-start: 3px solid var(--line);
+    margin-inline: 0;
+    margin-block: 1.5em;
+    padding-inline-start: 1.25em;
+    color: var(--muted);
+    font-style: italic;
+}
+
+blockquote p {
+    margin-block: 0.5em;
+}
+
+/* ----------------------------------------------------------
+   11. Code
+   ui-monospace resolves to the system monospace font on each
+   platform (SF Mono / Cascadia / DejaVu Sans Mono).
+   overflow: auto on pre lets wide code blocks scroll
+   horizontally rather than breaking the layout.
+   ---------------------------------------------------------- */
+code,
+kbd,
+samp {
+    font-family: var(--mono);
+    font-size: 0.875em;
+    background: rgba(0, 0, 0, 0.05);
+    padding: 0.15em 0.35em;
+    border-radius: 3px;
+}
+
+pre {
+    font-family: var(--mono);
+    font-size: 0.875rem;
+    line-height: 1.55;
+    background: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 1.1em 1.25em;
+    overflow: auto;
+    margin-block: 1.5em;
+    -webkit-overflow-scrolling: touch;
+}
+
+pre code {
+    background: none;
+    padding: 0;
+    border-radius: 0;
+    font-size: inherit;
+}
+
+/* ----------------------------------------------------------
+   12. Horizontal rule
+   ---------------------------------------------------------- */
+hr {
+    border: none;
+    border-block-start: 1px solid var(--line);
+    margin-block: 2.5em;
+}
+
+/* ----------------------------------------------------------
+   13. Post metadata line
+   ---------------------------------------------------------- */
+.post-meta {
+    font-size: 0.875rem;
+    color: var(--muted);
+    margin-block: 0.5em 2em;
+    letter-spacing: 0.01em;
+}
+
+.post-meta time {
+    font-variant-numeric: tabular-nums;
+}
+
+/* ----------------------------------------------------------
+   14. Page-level layout helpers
+   ---------------------------------------------------------- */
+.site-header {
+    border-block-end: 1px solid var(--line);
+    padding-block: 1.25rem;
+}
+
+.site-header .wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.site-header .site-name {
+    font-size: 0.8125rem;
+    font-family: var(--mono);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--ink);
+    font-weight: 600;
+}
+
+.site-header nav a {
+    font-size: 0.8125rem;
+    font-family: var(--mono);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.site-header nav a:hover {
+    color: var(--ink);
+    text-decoration: none;
+}
+
+.site-footer {
+    border-block-start: 1px solid var(--line);
+    padding-block: 2rem;
+    margin-block-start: 4rem;
+    font-size: 0.8125rem;
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--muted);
+}
+
+.site-footer a {
+    color: var(--muted);
+    text-decoration: none;
+}
+
+.site-footer a:hover {
+    color: var(--ink);
+}
+
+/* ----------------------------------------------------------
+   15. Blog index — post list
+   ---------------------------------------------------------- */
+.post-list {
+    list-style: none;
+    padding: 0;
+    margin-block: 2rem;
+}
+
+.post-list li {
+    margin: 0;
+    border-block-start: 1px solid var(--line);
+    padding-block: 1.5rem;
+}
+
+.post-list li:last-child {
+    border-block-end: 1px solid var(--line);
+}
+
+.post-list .post-title-link {
+    font-size: 1.25rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+    line-height: 1.25;
+}
+
+.post-list .post-title-link:hover {
+    text-decoration: underline;
+    text-underline-offset: 0.12em;
+}
+
+.post-list .post-summary {
+    margin-block: 0.35em 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.post-list .post-meta {
+    margin-block: 0 0.35em;
+}
+
+/* ----------------------------------------------------------
+   16. Article nav (← All posts / ← Home)
+   ---------------------------------------------------------- */
+.post-nav {
+    margin-block-end: 2.5rem;
+}
+
+.post-nav a {
+    font-size: 0.875rem;
+    font-family: var(--mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+}
+
+.post-nav a:hover {
+    color: var(--ink);
+}
+
+/* ----------------------------------------------------------
+   17. Main content area vertical rhythm
+   ---------------------------------------------------------- */
+main {
+    padding-block: 3rem 2rem;
+}
+
+/* Selection colour — matches homepage */
+::selection {
+    background: var(--ink);
+    color: var(--bg);
+}

@@ -1,0 +1,113 @@
+<!doctype html>
+<!--
+  POST TEMPLATE — not a published page.
+
+  To write a new post:
+    1. Copy this file to blog/<slug>.html  (e.g. blog/scaling-teams.html)
+    2. Update <title>, <meta name="description">, <link rel="canonical">,
+       and remove the <meta name="robots" content="noindex"> line below.
+    3. Update the <h1> and the <time datetime="…"> / visible date.
+    4. Replace the content inside <article> with your prose.
+    5. Add an entry to blog/index.html (copy the <li> template in that file).
+
+  Rules of the house: keep headings in order (h1 -> h2 -> h3), use semantic
+  elements, and never add inline styles or per-post CSS — all styling lives
+  in /blog/blog.css. The "Element reference" block below shows everything the
+  stylesheet supports; delete it once you've written your post.
+-->
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Post Title — Anatoliy Babushka</title>
+    <meta name="description" content="One-sentence summary of the post.">
+    <meta name="author" content="Anatoliy Babushka">
+    <link rel="canonical" href="https://anatoliybabushka.com/blog/post-slug.html">
+
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/" class="site-name">Anatoliy Babushka</a>
+            <nav aria-label="Site navigation">
+                <a href="/blog/">← All posts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <article aria-labelledby="post-title">
+
+                <nav class="post-nav" aria-label="Post navigation">
+                    <a href="/blog/">← All posts</a>
+                </nav>
+
+                <h1 id="post-title">Post Title</h1>
+
+                <p class="post-meta">
+                    <time datetime="2026-01-01">January 1, 2026</time>
+                </p>
+
+                <p>
+                    Opening paragraph. Replace everything from here down with your
+                    own writing, then delete the "Element reference" block below.
+                </p>
+
+                <!-- ===== Element reference — delete before publishing ===== -->
+
+                <h2>A section heading</h2>
+
+                <p>
+                    Body text is set at 1.125rem with a 1.65 line height, on a 66ch
+                    measure — the spacing this template ships with. Use <code>inline
+                    code</code> and <a href="/">links</a> wherever they help.
+                </p>
+
+                <h3>A sub-heading</h3>
+
+                <ul>
+                    <li>An unordered list item.</li>
+                    <li>Another item.</li>
+                </ul>
+
+                <ol>
+                    <li>An ordered list item.</li>
+                    <li>Another step.</li>
+                </ol>
+
+                <blockquote>
+                    <p>A pull quote or citation sits in a blockquote.</p>
+                    <p>— Attribution</p>
+                </blockquote>
+
+                <p>A fenced code block:</p>
+
+<pre><code>function example() {
+  return "monospaced, scrollable block";
+}</code></pre>
+
+                <hr>
+
+                <p>A closing paragraph after a horizontal rule.</p>
+
+                <!-- ===== End element reference ===== -->
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© 2026 Anatoliy Babushka · <a href="/blog/">All posts</a></span>
+        </div>
+    </footer>
+
+</body>
+</html>
