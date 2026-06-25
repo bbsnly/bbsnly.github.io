@@ -54,6 +54,11 @@ blog/
   it). Keep it identical across pages; leave it unless asked.
 - **Email** in the homepage is assembled at runtime (`data-mail` + a small
   script) to keep it out of the page source — preserve that pattern.
+- **Social/SEO meta.** Every page carries Open Graph + Twitter Card tags in
+  `<head>` (homepage and all blog pages). Keep each post's `og:`/`twitter:`
+  title and description in sync with its `<title>`/`<meta description>`.
+  `og:image` is the shared `Anatoliy_Babushka.webp` (732×1000 portrait) until a
+  per-post 1200×630 image exists.
 
 ## Create a new blog post
 
@@ -61,10 +66,12 @@ The publishing flow is "copy a file, write, push" — no generator, no front mat
 
 1. **Copy the template** to a slug-named file:
    `cp blog/_template.html blog/<slug>.html` (e.g. `blog/scaling-teams.html`).
-2. **Update the `<head>`:** `<title>`, `<meta name="description">`, and the
-   `<link rel="canonical" href="https://anatoliybabushka.com/blog/<slug>.html">`.
-   **Remove** the `<meta name="robots" content="noindex">` line (it exists only
-   to keep the template itself out of search).
+2. **Update the `<head>`:** `<title>`, `<meta name="description">`, the
+   `<link rel="canonical" href="https://anatoliybabushka.com/blog/<slug>.html">`,
+   and the **Open Graph / Twitter tags** (`og:url`, `og:title`,
+   `og:description`, `article:published_time`, `twitter:title`,
+   `twitter:description`). **Remove** the `<meta name="robots" content="noindex">`
+   line (it exists only to keep the template itself out of search).
 3. **Update the post header:** the `<h1>` title, the `<time datetime="YYYY-MM-DD">`
    element (both the `datetime` attribute and the visible date text), and the
    **read-time estimate** that follows it (`· N min read`). Estimate it as
