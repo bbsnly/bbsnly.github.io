@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Hand-maintained: add a <url> block for each new published post. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://anatoliybabushka.com/</loc>
+  </url>
+  <url>
+    <loc>https://anatoliybabushka.com/blog/</loc>
+    <lastmod>2026-06-25</lastmod>
+  </url>
+  <url>
+    <loc>https://anatoliybabushka.com/blog/ela7-writing-rule.html</loc>
+    <lastmod>2026-06-25</lastmod>
+  </url>
+</urlset>

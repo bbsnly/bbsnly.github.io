@@ -17,6 +17,8 @@ You edit files and push; GitHub Pages serves them as-is.
 ```
 index.html              Homepage. Self-contained: inline styles + one <style> block.
 CNAME                   Custom domain (anatoliybabushka.com).
+robots.txt              Allows all crawlers; points to the sitemap.
+sitemap.xml             Hand-maintained list of published URLs (add new posts).
 Anatoliy_Babushka.webp  Profile/OG image.
 fonts/
   inter-latin-var.woff2 Self-hosted Inter (variable, Latin subset, weights 100–900).
@@ -86,7 +88,9 @@ The publishing flow is "copy a file, write, push" — no generator, no front mat
    visible date, **read time** (same `· N min read` as the post header), title,
    and one-line summary. Remove the "No posts yet" `<li>` once there is a real
    post.
-6. **Commit and push.** GitHub Pages serves it at
+6. **Add the post to `sitemap.xml`:** copy a `<url>` block, set `<loc>` to the
+   post URL and `<lastmod>` to the date.
+7. **Commit and push.** GitHub Pages serves it at
    `https://anatoliybabushka.com/blog/<slug>.html`.
 
 > Content (the actual writing) is provided by Anatoliy — the steps above are the
