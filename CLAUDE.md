@@ -48,8 +48,10 @@ blog/
   small mono text passes 4.5:1 on the `#f6f6f4` background — don't lighten it.
 - **Palette (shared):** `--bg #f6f6f4`, `--ink #101010`/`#1a1a1a`,
   `--muted #6e6e6c`/`#5a5a57`, `--line #dcdcd6`.
-- **Analytics:** Google Tag Manager (`gtag.js`) loads `async` in the homepage
-  `<head>`. Leave it unless asked.
+- **Analytics:** the same `gtag.js` snippet (property `G-WG97HS57JW`) loads
+  `async` in the `<head>` of **every page** — the homepage and all blog pages
+  (`blog/index.html`, each post, and `blog/_template.html` so new posts inherit
+  it). Keep it identical across pages; leave it unless asked.
 - **Email** in the homepage is assembled at runtime (`data-mail` + a small
   script) to keep it out of the page source — preserve that pattern.
 
@@ -63,16 +65,20 @@ The publishing flow is "copy a file, write, push" — no generator, no front mat
    `<link rel="canonical" href="https://anatoliybabushka.com/blog/<slug>.html">`.
    **Remove** the `<meta name="robots" content="noindex">` line (it exists only
    to keep the template itself out of search).
-3. **Update the post header:** the `<h1>` title and the `<time datetime="YYYY-MM-DD">`
-   element (both the `datetime` attribute and the visible date text).
+3. **Update the post header:** the `<h1>` title, the `<time datetime="YYYY-MM-DD">`
+   element (both the `datetime` attribute and the visible date text), and the
+   **read-time estimate** that follows it (`· N min read`). Estimate it as
+   **word count ÷ 200, rounded up** (min 1) — count the words inside `<article>`,
+   ignoring HTML tags.
 4. **Write the content** inside `<article>`, replacing the placeholder prose and
    **deleting the "Element reference" block**. Keep headings in order and use
    semantic elements; do not add inline styles or per-post CSS.
 5. **Link it from the index:** in `blog/index.html`, copy the commented `<li>`
    template inside the post-list section, paste it at the **top** of
    `<ul class="post-list">` (newest first), and fill in the `href`, `datetime`,
-   visible date, title, and one-line summary. Remove the "No posts yet" `<li>`
-   once there is a real post.
+   visible date, **read time** (same `· N min read` as the post header), title,
+   and one-line summary. Remove the "No posts yet" `<li>` once there is a real
+   post.
 6. **Commit and push.** GitHub Pages serves it at
    `https://anatoliybabushka.com/blog/<slug>.html`.
 

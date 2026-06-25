@@ -348,27 +348,7 @@ hr {
 }
 
 /* ----------------------------------------------------------
-   16. Article nav (← All posts / ← Home)
-   ---------------------------------------------------------- */
-.post-nav {
-    margin-block-end: 2.5rem;
-}
-
-.post-nav a {
-    font-size: 0.875rem;
-    font-family: var(--mono);
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: var(--muted);
-}
-
-.post-nav a:hover {
-    color: var(--ink);
-}
-
-/* ----------------------------------------------------------
-   17. Main content area vertical rhythm
+   16. Main content area vertical rhythm
    ---------------------------------------------------------- */
 main {
     padding-block: 3rem 2rem;

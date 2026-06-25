@@ -6,7 +6,8 @@
     1. Copy this file to blog/<slug>.html  (e.g. blog/scaling-teams.html)
     2. Update <title>, <meta name="description">, <link rel="canonical">,
        and remove the <meta name="robots" content="noindex"> line below.
-    3. Update the <h1> and the <time datetime="…"> / visible date.
+    3. Update the <h1>, the <time datetime="…"> / visible date, and the
+       "N min read" estimate (words / 200, rounded up — see CLAUDE.md).
     4. Replace the content inside <article> with your prose.
     5. Add an entry to blog/index.html (copy the <li> template in that file).
 
@@ -17,6 +18,16 @@
 -->
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG97HS57JW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG97HS57JW');
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex">
@@ -44,14 +55,10 @@
 
             <article aria-labelledby="post-title">
 
-                <nav class="post-nav" aria-label="Post navigation">
-                    <a href="/blog/">← All posts</a>
-                </nav>
-
                 <h1 id="post-title">Post Title</h1>
 
                 <p class="post-meta">
-                    <time datetime="2026-01-01">January 1, 2026</time>
+                    <time datetime="2026-01-01">January 1, 2026</time> · N min read
                 </p>
 
                 <p>
