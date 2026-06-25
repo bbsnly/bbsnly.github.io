@@ -19,6 +19,8 @@ index.html              Homepage. Self-contained: inline styles + one <style> bl
 CNAME                   Custom domain (anatoliybabushka.com).
 robots.txt              Allows all crawlers; points to the sitemap.
 sitemap.xml             Hand-maintained list of published URLs (add new posts).
+_config.yml             Jekyll config; `exclude:` keeps repo-only files (CLAUDE.md)
+                        out of the *published* site (they stay in the repo).
 Anatoliy_Babushka.webp  Profile/OG image.
 fonts/
   inter-latin-var.woff2 Self-hosted Inter (variable, Latin subset, weights 100–900).
@@ -61,6 +63,14 @@ blog/
   title and description in sync with its `<title>`/`<meta description>`.
   `og:image` is the shared `Anatoliy_Babushka.webp` (732×1000 portrait) until a
   per-post 1200×630 image exists.
+- **Keeping files off the published site.** Jekyll skips anything starting with
+  `_` (e.g. `blog/_template.html`, `blog/_writing-guidelines.md`) or `.`, so
+  those are never served. `CLAUDE.md` does **not** start with `_`, so it is kept
+  out of the build via `_config.yml`'s `exclude:` list — add any other repo-only
+  file there. This controls anatoliybabushka.com only; the GitHub repo is public,
+  so these files stay visible at github.com (GitHub's own robots.txt keeps them
+  out of search engines). Do **not** use `robots.txt` `Disallow` to hide files:
+  it doesn't block access and only advertises the paths.
 
 ## Create a new blog post
 

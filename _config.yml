@@ -1,0 +1,15 @@
+# Jekyll configuration for GitHub Pages.
+#
+# Primary purpose: keep repo-only files OUT of the published site while leaving
+# them in the repository. Files/dirs starting with "_" or "." are already
+# skipped by Jekyll automatically (that is why blog/_template.html and
+# blog/_writing-guidelines.md are never served). Everything listed below is the
+# rest — files that would otherwise be copied verbatim to the live domain.
+#
+# Note: this controls anatoliybabushka.com only. The GitHub repo is public, so
+# these files remain visible at github.com regardless of this list.
+exclude:
+  - CLAUDE.md
+  - README.md
+  - .editorconfig
+  - .gitignore
