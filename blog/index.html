@@ -83,10 +83,16 @@
 
     <footer class="site-footer">
         <div class="wrap">
-            <span>© 2026 Anatoliy Babushka</span>
+            <span>© <span id="year">2026</span> Anatoliy Babushka</span>
             <p class="footer-disclaimer">The views here are my own, not those of any employer or client, past or present.</p>
         </div>
     </footer>
+
+    <script>
+        // Keep the footer copyright year current.
+        var year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>

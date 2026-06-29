@@ -245,10 +245,16 @@ flag any sentence that fails.</code></pre>
 
     <footer class="site-footer">
         <div class="wrap">
-            <span>© 2026 Anatoliy Babushka · <a href="/blog/">All posts</a></span>
+            <span>© <span id="year">2026</span> Anatoliy Babushka · <a href="/blog/">All posts</a></span>
             <p class="footer-disclaimer">The views here are my own, not those of any employer or client, past or present.</p>
         </div>
     </footer>
+
+    <script>
+        // Keep the footer copyright year current.
+        var year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
 
 </body>
 </html>
