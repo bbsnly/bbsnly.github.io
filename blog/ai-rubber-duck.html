@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG97HS57JW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG97HS57JW');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Why rubber-ducking is the AI use case I trust most - Anatoliy Babushka</title>
+    <meta name="description" content="AI as a rubber duck, an agent that questions my thinking until it cracks, earns more of my time than asking it for answers. Why it works, and how I use it.">
+    <meta name="author" content="Anatoliy Babushka">
+    <link rel="canonical" href="https://anatoliybabushka.com/blog/ai-rubber-duck.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anatoliybabushka.com/blog/ai-rubber-duck.html">
+    <meta property="og:title" content="Why rubber-ducking is the AI use case I trust most">
+    <meta property="og:description" content="AI as a rubber duck, an agent that questions my thinking until it cracks, earns more of my time than asking it for answers. Why it works, and how I use it.">
+    <meta property="og:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+    <meta property="og:image:width" content="732">
+    <meta property="og:image:height" content="1000">
+    <meta property="article:published_time" content="2026-07-08">
+    <meta property="article:author" content="Anatoliy Babushka">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Why rubber-ducking is the AI use case I trust most">
+    <meta name="twitter:description" content="AI as a rubber duck, an agent that questions my thinking until it cracks, earns more of my time than asking it for answers. Why it works, and how I use it.">
+    <meta name="twitter:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/" class="site-name">Anatoliy Babushka</a>
+            <nav aria-label="Site navigation">
+                <a href="/blog/">← All posts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <article aria-labelledby="post-title">
+
+                <h1 id="post-title">Why rubber-ducking is the AI use case I trust most</h1>
+
+                <p class="post-meta">
+                    <time datetime="2026-07-08">July 8, 2026</time> · 5 min read
+                </p>
+
+                <p>
+                    The AI tool I get the most from never writes my code or drafts
+                    my docs. It is a rubber duck: an agent I told to ask questions
+                    instead of answering them. It interrogates whatever I bring it
+                    until the gaps in my thinking show, and most weeks that beats
+                    any answer it could give.
+                </p>
+
+                <p>
+                    Almost everyone aims AI at output: write the function, summarize
+                    the thread, draft the message. That is the rational default. A
+                    good answer is measurable and saves real hours, and most of the
+                    work in front of you simply needs it. The use I trust most aims AI
+                    the other way, at my own reasoning. An answer machine hands you
+                    what you asked for. A good duck shows you the question you did not
+                    think to ask.
+                </p>
+
+                <h2>A rubber duck exposed me before a Milan meeting</h2>
+
+                <p>
+                    I learned how sharp that gets before a trip to Milan. I had a
+                    business idea and a meeting lined up with two possible
+                    co-founders. A few days out, I opened the duck to prepare, and I
+                    wanted help getting the meeting right.
+                </p>
+
+                <p>
+                    It started with the question I had skipped: what did I want to walk
+                    away with? Then it pressed on how I would adapt: what I would say
+                    if they doubted the idea, how I would steer the room if it turned.
+                    Three or four questions in, I had nothing.
+                </p>
+
+                <p>
+                    The duck had already delivered the verdict. I knew what I wanted
+                    from the idea, but I had not done the thinking the business
+                    conversation would demand. The meeting went about as well as that
+                    sets you up for: we did not move forward on anything, and the idea
+                    died in that room. No tool rescues you from being unprepared. But this
+                    one did something better: it told me the truth before I boarded the
+                    flight, not across the table from the people I wanted to convince.
+                </p>
+
+                <h2>The practice is older than the AI</h2>
+
+                <p>
+                    Rubber-ducking did not arrive with language models. Andy Hunt and
+                    Dave Thomas named it in
+                    <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/">The Pragmatic Programmer</a>
+                    in 1999. Explain your code to a rubber duck on your desk, line by
+                    line, and the bug tends to announce itself before you finish. The
+                    duck contributes nothing. You do the work, and saying it out loud
+                    is what shakes the error loose.
+                </p>
+
+                <p>
+                    I have run some version of this my whole career. Before I trusted
+                    my own logic, I would write a comment for every line first,
+                    spelling out what it should do, then fill in the code underneath.
+                    Often the logic collapsed right there in the comments, which was
+                    the whole point of writing them. A mistake is cheaper in English
+                    than in code.
+                </p>
+
+                <h2>What Harvard's CS50 duck gets right about restraint</h2>
+
+                <p>
+                    When I built my own AI version, I took the core idea from Harvard.
+                    Their intro course, CS50, runs an AI rubber duck called the
+                    <a href="https://cs50.ai">CS50 Duck</a> that students can question
+                    around the clock. The design decision that matters is restraint:
+                    the team gave it guardrails so it nudges a student toward the
+                    solution and stops short of just handing it over.
+                    <a href="https://cs.harvard.edu/malan/publications/V1fp0567-liu.pdf">Their writeup</a>
+                    frames the goal as a one-to-one tutor that leads you to the answer
+                    rather than spoiling it.
+                </p>
+
+                <p>
+                    That restraint is the entire product. A model's default is to be
+                    helpful, and helpful means answering. To get a duck, you have to
+                    tell it, firmly and often, to do the harder thing: ask the next
+                    question and then wait.
+                </p>
+
+                <h2>Where it earns its keep: rehearsing a change</h2>
+
+                <p>
+                    Before I commit to something hard to walk back, like a new process or a
+                    reorg, I rubber-duck the rollout before a single person hears it.
+                    The duck plays skeptic: what will the senior engineers push back on,
+                    and which line lands as a threat when I meant it as a plan. It finds
+                    the misunderstanding I baked in without noticing, while the wording
+                    is still cheap to change. By the time the change reaches people, I
+                    have already lost the argument once in private and
+                    <a href="/blog/ela7-writing-rule.html">rewritten it in plainer words</a>.
+                </p>
+
+                <p>
+                    The same move works before a big code change. Ahead of a refactor
+                    or a migration, I talk the plan through and let the duck poke at it.
+                    It asks what breaks if my main assumption is wrong, and what I am
+                    keeping because it is right versus because it is familiar. The duck
+                    takes whatever decision I am about to commit to and makes me argue
+                    for it before a line of it is written.
+                </p>
+
+                <h2>When is rubber-ducking the wrong tool?</h2>
+
+                <p>
+                    None of this is free, and it is not always the right move.
+                    Rubber-ducking is slow by design, so when I only need an answer, a
+                    syntax detail or some boilerplate, I ask for the answer and move on.
+                </p>
+
+                <p>
+                    It is also only as good as my honesty with it. I can feed it the
+                    conclusion I am hoping for and collect a reassuring nod. It tests my
+                    logic and takes my motives on trust.
+                </p>
+
+                <p>
+                    It knows nothing about my situation beyond what I tell it and what
+                    it was trained on. That blind spot is the same one that lets it
+                    <a href="/blog/when-to-rewrite-working-code.html">rewrite code it cannot see</a>.
+                    It is a mirror that asks good questions, with no judgment of its own.
+                </p>
+
+                <p>
+                    So I run two kinds of AI. One answers, which is most of what people
+                    mean by the word, and it genuinely saves me time. The other asks but
+                    answers nothing, and that is exactly why it is worth more to me. It
+                    makes me right more often, or at least stops me in time, before the
+                    people across the table get the chance.
+                </p>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Anatoliy Babushka · <a href="/blog/">All posts</a></span>
+            <p class="footer-disclaimer">The views here are my own, not those of any employer or client, past or present.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Keep the footer copyright year current.
+        var year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
