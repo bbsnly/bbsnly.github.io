@@ -147,8 +147,39 @@ post, if one exists). Apply this substitution table on top of the normal steps:
 | Read-time label | `min read` | `min di lettura` | `хв читання` |
 | Font preload | `inter-latin-var.woff2` only | `inter-latin-var.woff2` only | **both** `inter-latin-var.woff2` and `inter-cyrillic-var.woff2` (Ukrainian pages mix Cyrillic prose with Latin punctuation/the site name) |
 
-Translate intent, not words — see the voice section below; the same rule applies
-in any language. If the post exists in more than one language, add reciprocal
+**Translation quality** (learned the hard way on the first Italian/Ukrainian batch):
+
+- **Translate intent, not words.** Rewrite each paragraph the way a native
+  writer of that language would actually say it — restructure sentences, drop
+  or add a clause, whatever natural phrasing needs. Never translate
+  mechanically line-by-line; see the voice section below, same rule in any
+  language.
+- **Facts are locked, prose is free.** Every date, number, name, company, and
+  external URL must match the source exactly. Only the surrounding sentences
+  get rewritten — never invent or drop a detail to make one read better.
+- **Keep loanwords a native speaker of that field would actually keep** (e.g.
+  "rubber duck," "backlog," "PBI" stayed English in both translations) rather
+  than forcing an awkward native coinage — but don't over-anglicize either.
+  Judge each term on what that language's actual tech/leadership writers do.
+- **Recompute read-time from the translated text**, not the English source's
+  number — words ÷ 200, rounded up, min 1. Translated prose runs a different
+  length than the original.
+- **Always run a second, independent native-language review pass** in a fresh
+  context (not the same agent/session that translated) before publishing. Its
+  job: catch calques and translation-ese, and flag anything that breaks that
+  language's own punctuation/register norms even where it's grammatically
+  valid. Concretely: the first Ukrainian draft of these three posts used an
+  em-dash every 25–35 words (32/24/23 per ~800-word post, versus 0–1 in the
+  English source) — a habit English rhetorical style produces but native
+  Ukrainian prose doesn't — and the review pass cut it roughly in half.
+- **Don't use the `blog-post-reviewer` subagent on non-English drafts.** Its
+  mechanical checkers and the skills behind them (`ai-tell-removal`'s banned
+  word list, `prose-mechanics`' Flesch Reading Ease math) are English-only, and
+  it can't fix what it finds anyway (no `Edit` tool). Use a general-purpose
+  agent instead, briefed on that language's specific norms, with edit access
+  to fix what it finds.
+
+If the post exists in more than one language, add reciprocal
 `<link rel="alternate" hreflang="en/it/uk/x-default">` tags (pointing at every
 version's URL, including itself) and `og:locale:alternate` tags (the other two
 locales) to **every** version's `<head>`, matching the pattern already on the
