@@ -64,7 +64,7 @@ blog/
   `og:image` is the shared `Anatoliy_Babushka.webp` (732×1000 portrait) until a
   per-post 1200×630 image exists.
 - **Keeping files off the published site.** Jekyll skips anything starting with
-  `_` (e.g. `blog/_template.html`, `blog/_writing-guidelines.md`) or `.`, so
+  `_` (e.g. `blog/_template.html`) or `.`, so
   those are never served. `CLAUDE.md` does **not** start with `_`, so it is kept
   out of the build via `_config.yml`'s `exclude:` list — add any other repo-only
   file there. This controls anatoliybabushka.com only; the GitHub repo is public,
@@ -103,8 +103,42 @@ The publishing flow is "copy a file, write, push" — no generator, no front mat
 7. **Commit and push.** GitHub Pages serves it at
    `https://anatoliybabushka.com/blog/<slug>.html`.
 
-> Content (the actual writing) is provided by Anatoliy — the steps above are the
-> mechanical scaffolding only.
+> The steps above are the mechanical scaffolding only. The writing itself follows
+> the next section — and every lived specific in it comes from Anatoliy.
+
+## Writing a blog post (voice & site rules)
+
+Draft with the `blog-post-author` subagent and review with `blog-post-reviewer`
+(both user-level, in `~/.claude/agents/`). The generic writing craft lives in
+user-level skills (`writing-substance`, `writing-structure`, `prose-mechanics`,
+`writing-seo`, `ai-tell-removal`, `editing-passes`); those skills and agents are
+site-agnostic and expect the site-specific facts below from this file.
+
+- **Voice.** Write as Anatoliy: an engineering leader in Copenhagen who has led
+  teams for more than a decade (Unity, Siteimprove, VML MAP) and still ships code
+  (chartjs-php, 100k+ installs). Declarative and plain-spoken, concrete down to
+  the example, confident without boasting. Show the work, never the title — a
+  leader who still writes code is the main trust trigger, so ground points in
+  real commits, code reviews, and maintenance burdens. Vary which proof appears;
+  a credential or phrase repeated across posts becomes a tic.
+- **Audience.** EMs, directors, senior+ engineers, and prospective clients sizing
+  the author up — smart, short on time, skeptical of empty content on these
+  topics.
+- **Themes.** Three only: engineering leadership; moving AI from pilot to
+  production; building software teams. Every post stays inside them and links at
+  least two sibling posts.
+- **Banned site phrases:** "let's connect," "create success together," stated
+  client caps, urgency theatrics ("act now," "limited spots"), any
+  self-promotional sign-off.
+- **Provider-agnostic on AI tooling.** Lead with generic terms ("agent guide,"
+  "agent-instructions file"). Name CLAUDE.md or AGENTS.md sparingly, as examples
+  among others, never as the only option — in drafting, examples, and editing
+  alike.
+- **Locale:** US English throughout.
+- **Readability lean:** Flesch Reading Ease 50–60 for deep technical posts,
+  60–70 for broader leadership pieces.
+- **Facts are Anatoliy's.** Every number, anecdote, and credential comes from
+  him; agents never invent one — they leave a marked placeholder and ask.
 
 ## Deploy
 
