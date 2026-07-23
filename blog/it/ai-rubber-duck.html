@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG97HS57JW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG97HS57JW');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Perché il rubber duck debugging è l'uso dell'IA di cui mi fido di più - Anatoliy Babushka</title>
+    <meta name="description" content="L'IA come rubber duck, un agente che mette alla prova il mio ragionamento finché non si incrina, merita più del mio tempo che chiederle risposte dirette. Perché funziona e come la uso.">
+    <meta name="author" content="Anatoliy Babushka">
+    <link rel="canonical" href="https://anatoliybabushka.com/blog/it/ai-rubber-duck.html">
+    <link rel="alternate" hreflang="en" href="https://anatoliybabushka.com/blog/ai-rubber-duck.html">
+    <link rel="alternate" hreflang="it" href="https://anatoliybabushka.com/blog/it/ai-rubber-duck.html">
+    <link rel="alternate" hreflang="uk" href="https://anatoliybabushka.com/blog/ua/ai-rubber-duck.html">
+    <link rel="alternate" hreflang="x-default" href="https://anatoliybabushka.com/blog/ai-rubber-duck.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anatoliybabushka.com/blog/it/ai-rubber-duck.html">
+    <meta property="og:title" content="Perché il rubber duck debugging è l'uso dell'IA di cui mi fido di più">
+    <meta property="og:description" content="L'IA come rubber duck, un agente che mette alla prova il mio ragionamento finché non si incrina, merita più del mio tempo che chiederle risposte dirette. Perché funziona e come la uso.">
+    <meta property="og:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+    <meta property="og:image:width" content="732">
+    <meta property="og:image:height" content="1000">
+    <meta property="article:published_time" content="2026-07-08">
+    <meta property="article:author" content="Anatoliy Babushka">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Perché il rubber duck debugging è l'uso dell'IA di cui mi fido di più">
+    <meta name="twitter:description" content="L'IA come rubber duck, un agente che mette alla prova il mio ragionamento finché non si incrina, merita più del mio tempo che chiederle risposte dirette. Perché funziona e come la uso.">
+    <meta name="twitter:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/" class="site-name">Anatoliy Babushka</a>
+            <nav aria-label="Site navigation">
+                <a href="/blog/it/">← Tutti gli articoli</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <article aria-labelledby="post-title">
+
+                <h1 id="post-title">Perché il rubber duck debugging è l'uso dell'IA di cui mi fido di più</h1>
+
+                <p class="post-meta">
+                    <time datetime="2026-07-08">8 luglio 2026</time> · 6 min di lettura
+                </p>
+
+                <p>
+                    Lo strumento IA da cui ricavo di più non scrive mai il mio codice
+                    né redige i miei documenti. È un rubber duck: un agente a cui ho
+                    detto di fare domande invece di rispondere. Interroga qualsiasi
+                    cosa gli porti finché non emergono le lacune nel mio ragionamento,
+                    e nella maggior parte delle settimane questo vale più di qualsiasi
+                    risposta che potrebbe darmi.
+                </p>
+
+                <p>
+                    Quasi tutti puntano l'IA sull'output: scrivi la funzione, riassumi
+                    il thread, abbozza il messaggio. È la scelta razionale di default.
+                    Una buona risposta è misurabile e fa risparmiare ore reali, e gran
+                    parte del lavoro che hai davanti ha semplicemente bisogno di
+                    questo. L'uso di cui mi fido di più punta l'IA nella direzione
+                    opposta, verso il mio stesso ragionamento. Una macchina per le
+                    risposte ti consegna quello che hai chiesto. Un buon rubber duck ti
+                    mostra la domanda che non avevi pensato di fare.
+                </p>
+
+                <h2>Un rubber duck mi ha smascherato prima di un incontro a Milano</h2>
+
+                <p>
+                    Ho capito quanto può essere tagliente prima di un viaggio a
+                    Milano. Avevo un'idea di business e un incontro fissato con due
+                    possibili co-fondatori. Qualche giorno prima, ho aperto il duck per
+                    prepararmi: volevo arrivare pronto all'incontro.
+                </p>
+
+                <p>
+                    È partito dalla domanda che avevo saltato: cosa volevo portarmi a
+                    casa da quell'incontro? Poi ha insistito su come mi sarei adattato:
+                    cosa avrei detto se avessero messo in dubbio l'idea, come avrei
+                    gestito la stanza se le cose fossero girate male. Dopo tre o
+                    quattro domande, non avevo più risposte.
+                </p>
+
+                <p>
+                    Il duck aveva già emesso il verdetto. Sapevo cosa volevo da
+                    quell'idea, ma non avevo fatto la riflessione che una
+                    conversazione di business avrebbe richiesto. L'incontro è andato
+                    esattamente come quella premessa lasciava presagire: non abbiamo
+                    portato avanti nulla, e l'idea è morta in quella stanza. Nessuno
+                    strumento ti salva dall'essere impreparato. Ma questo ha fatto
+                    qualcosa di meglio: mi ha detto la verità prima che salissi
+                    sull'aereo, non al tavolo, davanti alle persone che volevo
+                    convincere.
+                </p>
+
+                <h2>La pratica è più vecchia dell'IA</h2>
+
+                <p>
+                    Il rubber duck debugging non è arrivato con i modelli linguistici.
+                    Andy Hunt e Dave Thomas gli hanno dato questo nome in
+                    <a href="https://pragprog.com/titles/tpp20/the-pragmatic-programmer-20th-anniversary-edition/">The Pragmatic Programmer</a>
+                    nel 1999. Spiega il tuo codice, riga per riga, a un rubber duck
+                    sulla scrivania, e il bug tende a rivelarsi da solo prima che tu
+                    finisca. Il duck non aggiunge nulla. Il lavoro lo fai tu,
+                    ed è il dirlo ad alta voce che fa saltare fuori l'errore.
+                </p>
+
+                <p>
+                    Ho praticato una versione di questo per tutta la carriera.
+                    Prima di fidarmi della mia stessa logica, scrivevo un commento per
+                    ogni riga, spiegando cosa avrebbe dovuto fare, e solo dopo
+                    riempivo il codice sotto. Spesso la logica crollava proprio lì, nei
+                    commenti, ed era esattamente lo scopo di scriverli. Un errore
+                    costa meno se lo scopri a parole che nel codice.
+                </p>
+
+                <h2>Cosa ci insegna sulla misura il duck del CS50 di Harvard</h2>
+
+                <p>
+                    Quando ho costruito la mia versione IA, ho preso l'idea di base da
+                    Harvard. Il loro corso introduttivo, CS50, mette a disposizione un
+                    rubber duck IA chiamato
+                    <a href="https://cs50.ai">CS50 Duck</a>, che gli studenti possono
+                    interrogare a qualsiasi ora. La scelta progettuale che conta è la
+                    misura: il team gli ha messo dei paletti perché spinga lo studente
+                    verso la soluzione senza mai consegnargliela bell'e pronta.
+                    <a href="https://cs.harvard.edu/malan/publications/V1fp0567-liu.pdf">Il loro report</a>
+                    descrive l'obiettivo come un tutor uno a uno che ti guida verso la
+                    risposta invece di svelartela.
+                </p>
+
+                <p>
+                    Quella misura è l'intero prodotto. Il comportamento di default di
+                    un modello è essere utile, e utile vuol dire rispondere. Per
+                    ottenere un duck devi dirgli, con fermezza e di continuo, di fare
+                    la cosa più difficile: porre la domanda successiva e poi aspettare.
+                </p>
+
+                <h2>Dove rende davvero: le prove generali di un cambiamento</h2>
+
+                <p>
+                    Prima di impegnarmi in qualcosa di difficile da annullare, come un
+                    nuovo processo o una riorganizzazione, sottopongo il lancio al
+                    rubber duck prima ancora che una sola persona ne senta parlare. Il
+                    duck fa lo scettico: cosa contesteranno gli ingegneri senior, quale
+                    frase suonerà come una minaccia quando invece intendevo
+                    presentarla come un piano. Trova il fraintendimento che avevo
+                    infilato senza accorgermene, mentre le parole costano ancora poco
+                    da cambiare. Quando il cambiamento arriva alle persone, ho già
+                    perso l'argomentazione una volta in privato e l'ho
+                    <a href="/blog/it/ela7-writing-rule.html">riscritta con parole più semplici</a>.
+                </p>
+
+                <p>
+                    La stessa mossa funziona prima di un grande cambiamento nel
+                    codice. Prima di un refactor o di una migrazione, ripercorro il
+                    piano ad alta voce e lascio che il duck lo metta alla prova. Chiede
+                    cosa si rompe se la mia assunzione principale è sbagliata, e cosa
+                    sto tenendo perché è giusto e cosa perché mi è familiare. Il duck
+                    prende qualsiasi decisione stia per prendere e mi costringe ad
+                    argomentarla prima ancora che sia scritta una riga di codice.
+                </p>
+
+                <h2>Quando il rubber duck debugging non è lo strumento giusto?</h2>
+
+                <p>
+                    Niente di tutto questo è gratis, e non è sempre la mossa giusta.
+                    Il rubber duck debugging è lento per costruzione, quindi quando mi
+                    serve solo una risposta, un dettaglio di sintassi o del
+                    boilerplate, chiedo la risposta e vado avanti.
+                </p>
+
+                <p>
+                    Inoltre, vale solo quanto la mia onestà nei suoi confronti. Posso
+                    dargli in pasto la conclusione che spero di sentire e raccogliere
+                    un cenno rassicurante. Mette alla prova la mia logica, ma le mie
+                    motivazioni le prende per buone.
+                </p>
+
+                <p>
+                    Non sa nulla della mia situazione al di là di quello che gli dico
+                    e di quello su cui è stato addestrato. Lo stesso punto cieco è
+                    quello che gli permette di
+                    <a href="/blog/it/when-to-rewrite-working-code.html">riscrivere codice che non può vedere</a>.
+                    È uno specchio che fa buone domande, senza un giudizio proprio.
+                </p>
+
+                <p>
+                    Quindi uso due tipi di IA. Una risponde, che è quello che la
+                    maggior parte delle persone intende con quella parola, e mi fa
+                    risparmiare tempo per davvero. L'altra fa domande ma non risponde a
+                    nulla, ed è esattamente per questo che vale di più per me. Mi
+                    fa avere ragione più spesso, o quantomeno mi ferma in tempo, prima
+                    che possano farlo le persone dall'altra parte del tavolo.
+                </p>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Anatoliy Babushka · <a href="/blog/it/">Tutti gli articoli</a></span>
+            <p class="footer-disclaimer">Le opinioni espresse qui sono mie personali, non quelle di un datore di lavoro o cliente, passato o presente.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Keep the footer copyright year current.
+        var year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
