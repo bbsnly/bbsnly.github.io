@@ -23,11 +23,19 @@ _config.yml             Jekyll config; `exclude:` keeps repo-only files (CLAUDE.
                         out of the *published* site (they stay in the repo).
 Anatoliy_Babushka.webp  Profile/OG image.
 fonts/
-  inter-latin-var.woff2 Self-hosted Inter (variable, Latin subset, weights 100–900).
+  inter-latin-var.woff2    Self-hosted Inter (variable, Latin subset, weights 100–900).
+  inter-cyrillic-var.woff2 Self-hosted Inter (variable, Cyrillic subset, weights 100–900).
+                           Used by /blog/ua/ pages; split from the Latin file via
+                           unicode-range so Latin-only pages never fetch it.
 blog/
-  blog.css              Shared stylesheet for ALL blog pages (the only blog CSS).
-  index.html            Blog landing page / post list.
-  _template.html        Post template (see "Create a new blog post"). Not published.
+  blog.css              Shared stylesheet for ALL blog pages, all languages (the only blog CSS).
+  index.html            Blog landing page / post list (English).
+  _template.html        Post template for ALL languages (see "Create a new blog post").
+                        Not published. Do not duplicate this per language — see the
+                        substitution table in that section instead.
+  it/                   Italian posts + index.html. Same slugs as the English originals.
+  ua/                   Ukrainian posts + index.html. Folder is named "ua", but pages use
+                        lang="uk" (the correct ISO code — "ua" is only the folder name).
 ```
 
 ## Conventions & constraints
@@ -36,9 +44,21 @@ blog/
   processes the site and **ignores files/dirs beginning with `_`** (that's why
   `blog/_template.html` is not published). Plain HTML files are served verbatim.
 - **Self-hosted Inter.** The font is served from `/fonts/inter-latin-var.woff2`
-  via `@font-face` + a `<link rel="preload" ... crossorigin>`. Do **not**
+  and (for `/blog/ua/` pages) `/fonts/inter-cyrillic-var.woff2`, each declared
+  as its own `@font-face` in `blog/blog.css` with a `unicode-range` scoping it
+  to the scripts it covers, plus a matching `<link rel="preload" ...
+  crossorigin>` in the `<head>` of pages that actually use that script — a
+  Latin-only page must not preload the Cyrillic file, and vice versa. Both
+  files are permanent self-hosted copies (originally sourced from Google
+  Fonts' own per-script subsetting, then downloaded once and committed here);
+  the site never makes a request to Google Fonts at runtime. Do **not**
   re-introduce Google Fonts `<link>`s — that was removed to kill a
-  render-blocking request and the third-party request chain.
+  render-blocking request and the third-party request chain. If a future post
+  needs another script (e.g. Greek), fetch that subset the same way: request
+  `https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap`
+  with a modern-browser `User-Agent`, take the woff2 URL and `unicode-range`
+  for that script's `@font-face` block, download the file once, and add a new
+  `@font-face` + preload pair — don't touch the existing Latin/Cyrillic files.
 - **Homepage (`index.html`)** is styled with **inline styles** + a single
   `<style>` block holding `:root` CSS variables and `@font-face`. Keep its design
   byte-for-byte unless a change is explicitly requested.
@@ -105,6 +125,34 @@ The publishing flow is "copy a file, write, push" — no generator, no front mat
 
 > The steps above are the mechanical scaffolding only. The writing itself follows
 > the next section — and every lived specific in it comes from Anatoliy.
+
+### Publishing the same post in Italian or Ukrainian
+
+Same flow, same starting template (`blog/_template.html`) — there is no separate
+`_template.html` per language; that duplication was tried and dropped because a
+generic template can't hold real per-post values (canonical URL, date, hreflang)
+anyway, so three copies just meant three places to forget to update. Output goes
+to `blog/it/<slug>.html` or `blog/ua/<slug>.html` (same slug as the English
+post, if one exists). Apply this substitution table on top of the normal steps:
+
+| Field | English (template default) | Italian | Ukrainian |
+|---|---|---|---|
+| `<html lang="...">` | `en` | `it` | `uk` (not `ua` — that's only the folder name) |
+| Back-link nav text / href | `← All posts` → `/blog/` | `← Tutti gli articoli` → `/blog/it/` | `← Усі статті` → `/blog/ua/` |
+| Footer link text | `All posts` | `Tutti gli articoli` | `Усі статті` |
+| Footer disclaimer | "The views here are my own, not those of any employer or client, past or present." | "Le opinioni espresse qui sono mie personali, non quelle di un datore di lavoro o cliente, passato o presente." | "Погляди, викладені тут, особисто мої, а не мого роботодавця чи клієнта, теперішнього чи колишнього." |
+| `og:locale` | `en_US` | `it_IT` | `uk_UA` |
+| Canonical / `og:url` base | `/blog/` | `/blog/it/` | `/blog/ua/` |
+| Date example format | `January 1, 2026` | `1 gennaio 2026` | `1 січня 2026 р.` |
+| Read-time label | `min read` | `min di lettura` | `хв читання` |
+| Font preload | `inter-latin-var.woff2` only | `inter-latin-var.woff2` only | **both** `inter-latin-var.woff2` and `inter-cyrillic-var.woff2` (Ukrainian pages mix Cyrillic prose with Latin punctuation/the site name) |
+
+Translate intent, not words — see the voice section below; the same rule applies
+in any language. If the post exists in more than one language, add reciprocal
+`<link rel="alternate" hreflang="en/it/uk/x-default">` tags (pointing at every
+version's URL, including itself) and `og:locale:alternate` tags (the other two
+locales) to **every** version's `<head>`, matching the pattern already on the
+nine published posts. A post that only exists in one language needs neither.
 
 ## Writing a blog post (voice & site rules)
 
