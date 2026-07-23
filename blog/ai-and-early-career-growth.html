@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG97HS57JW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG97HS57JW');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Early-career engineers, write your own code before AI does - Anatoliy Babushka</title>
+    <meta name="description" content="I built native iOS and Android apps with AI, reviewed every line myself, and still learned far less than struggling through them by hand would have taught me.">
+    <meta name="author" content="Anatoliy Babushka">
+    <link rel="canonical" href="https://anatoliybabushka.com/blog/ai-and-early-career-growth.html">
+    <link rel="alternate" hreflang="en" href="https://anatoliybabushka.com/blog/ai-and-early-career-growth.html">
+    <link rel="alternate" hreflang="it" href="https://anatoliybabushka.com/blog/it/ai-and-early-career-growth.html">
+    <link rel="alternate" hreflang="uk" href="https://anatoliybabushka.com/blog/ua/ai-and-early-career-growth.html">
+    <link rel="alternate" hreflang="x-default" href="https://anatoliybabushka.com/blog/ai-and-early-career-growth.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anatoliybabushka.com/blog/ai-and-early-career-growth.html">
+    <meta property="og:title" content="Early-career engineers, write your own code before AI does">
+    <meta property="og:description" content="I built native iOS and Android apps with AI, reviewed every line myself, and still learned far less than struggling through them by hand would have taught me.">
+    <meta property="og:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+    <meta property="og:image:width" content="732">
+    <meta property="og:image:height" content="1000">
+    <meta property="article:published_time" content="2026-07-23">
+    <meta property="article:author" content="Anatoliy Babushka">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="it_IT">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Early-career engineers, write your own code before AI does">
+    <meta name="twitter:description" content="I built native iOS and Android apps with AI, reviewed every line myself, and still learned far less than struggling through them by hand would have taught me.">
+    <meta name="twitter:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/" class="site-name">Anatoliy Babushka</a>
+            <nav aria-label="Site navigation">
+                <a href="/blog/">← All posts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <article aria-labelledby="post-title">
+
+                <h1 id="post-title">Early-career engineers, write your own code before AI does</h1>
+
+                <p class="post-meta">
+                    <time datetime="2026-07-23">July 23, 2026</time> · 7 min read
+                </p>
+
+                <p>
+                    I recently built native iOS and Android apps in a few weeks,
+                    reviewing every AI-written line and keeping the agent inside
+                    strict guardrails. Both apps work today, though neither has
+                    shipped yet. What I did not walk away with is real platform
+                    fluency.
+                </p>
+
+                <p>
+                    That gap is the whole argument here, and it is aimed at
+                    engineers early in their career more than anyone else. An agent
+                    will hand you a working result faster than you could build it
+                    alone. The speed is not the problem. What you skip on the way
+                    there is.
+                </p>
+
+                <h2>I reviewed every line. I still didn't learn the platforms.</h2>
+
+                <p>
+                    This was not my first mobile project. I had shipped Windows
+                    Phone apps years ago, and built with Xamarin, Ionic, and React
+                    Native around 2015. None of that was native iOS or Android,
+                    though, and it sat a decade removed from tooling that has
+                    since moved through SwiftUI, Jetpack Compose, and Swift's
+                    async/await model. When a recent project called for
+                    native apps on both platforms, built in a few weeks, I knew
+                    that gap would close almost entirely through an AI coding
+                    agent.
+                </p>
+
+                <p>
+                    I did not do this carelessly. I knew what turning an agent
+                    loose on a codebase risks. So I reviewed every diff line by
+                    line and built strict guardrails to keep its scope and its
+                    output under control. The result held: both apps reached a
+                    working state and did what they were supposed to do.
+                </p>
+
+                <p>
+                    What I actually learned split cleanly in two. Wherever the
+                    agent got an API right on the first or second try, I reviewed
+                    the code, understood what it did, and moved on, without that
+                    API ever becoming mine. Wherever it got stuck, on a handful of
+                    calls that no amount of prompting fixed, I opened the platform
+                    documentation myself and solved them the old way. Those APIs I
+                    know by heart now. The rest I can still explain, but I could
+                    not rebuild from memory.
+                </p>
+
+                <p>
+                    Then a developer who had written production Swift for years
+                    joined the project. They asked good questions almost
+                    immediately, the kind a review does not surface on its own:
+                </p>
+
+                <ul>
+                    <li>which pattern was idiomatic instead of merely working</li>
+                    <li>where a call quietly cost performance</li>
+                    <li>what the platform assumed but the code never stated</li>
+                </ul>
+
+                <p>
+                    Within days, they had improved performance more than my
+                    review process had in weeks.
+                </p>
+
+                <p>
+                    This was the proof: review sharpens judgment, but only
+                    hands-on struggle builds fluency, and I came away fluent
+                    only in the handful of places the agent could not save
+                    me. Everywhere else, I was reviewer-competent, a real
+                    result, just not the one that builds platform knowledge.
+                </p>
+
+                <h2>Struggle is how understanding sticks</h2>
+
+                <p>
+                    That split lines up with what I have watched across more than
+                    a decade of leading engineering teams: people learn at the
+                    point where things stop being easy, not before. I know what I
+                    know as an engineer because I fought for it, not because it
+                    arrived assembled. Every strong engineer I have worked with got
+                    there on the same path: hit the wall, fail at it, and only then
+                    see why the wall was shaped that way.
+                </p>
+
+                <p>
+                    Cognitive psychologist Robert Bjork has a name for this:
+                    <a href="https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2021/01/RABjorkELBjorkJARMAC2020ForPostingSingleSpaced.pdf">desirable difficulty</a>.
+                    His research found that easy learning conditions (quick
+                    answers, smooth paths, no friction) often produce the
+                    weakest long-term retention. Struggling to retrieve or
+                    build an answer yourself is what makes it stick. Being
+                    handed the answer is what makes it evaporate by Thursday.
+                </p>
+
+                <p>
+                    An AI agent removes exactly that friction. Ask it to write the
+                    function, explain the stack trace, or scaffold the whole
+                    feature, and it does, cleanly, on the first try, most of the
+                    time. For someone already senior in the domain the agent is
+                    working in, it mainly saves time: the judgment already
+                    exists, so it just executes faster. For someone still
+                    building that judgment in that domain, the same ease
+                    removes the one mechanism that would have built it. On this
+                    project, no matter how many years I had logged elsewhere, I
+                    was the second kind of person.
+                </p>
+
+                <h2>Working code is not proof you understand it</h2>
+
+                <p>
+                    This is not an argument against using AI to move fast. The
+                    apps I built work. The project got what it needed, on the
+                    timeline it needed, even with shipping still ahead of them.
+                    An agent made that possible in weeks, instead of however
+                    long it would have taken me to learn two mobile platforms
+                    by hand first. If delivery is the only goal, AI is worth
+                    every bit of the investment.
+                </p>
+
+                <p>
+                    But delivery and skill are different currencies, and AI
+                    pays out only in the first one. Everywhere it does not fail
+                    outright, it hides complexity instead of teaching it. Whether
+                    a pattern is idiomatic or merely working, whether one call
+                    quietly costs more than another: it all resolves inside the
+                    model, out of view, and never becomes yours. It is the same
+                    blind spot that lets an agent
+                    <a href="/blog/when-to-rewrite-working-code.html">generate a clean replacement it cannot explain</a>
+                    for code it never understood in the first place.
+                </p>
+
+                <p>
+                    There is a fair counter to all of this: prompting an agent
+                    well is its own skill, and juniors may be better placed to
+                    build it than seniors are. They have not spent years
+                    forming opinions about how a codebase should look, so a
+                    new tool meets less resistance from them than it does from
+                    someone unlearning old habits. That is real, and it is a
+                    reason to hand agents to juniors rather than keep the
+                    tools away from them.
+                </p>
+
+                <p>
+                    It is also a different skill from the one this piece is
+                    about. Prompting well gets you a working result fast. It
+                    does not teach you why one call costs more than another,
+                    or which pattern the platform actually expects, the way
+                    that Swift developer could tell within days. Juniors who
+                    pick up the tool quickly still need that second skill,
+                    and being quick with the tool will not hand it to them
+                    any faster.
+                </p>
+
+                <p>
+                    If you already love this craft enough to get your hands dirty
+                    regardless, AI multiplies what you can build. If you reach for
+                    it because the alternative feels too hard, you are choosing
+                    the path guaranteed not to make you better at the job you are
+                    paid to do.
+                </p>
+
+                <h2>What should an early-career engineer do instead?</h2>
+
+                <p>
+                    None of this means avoid AI, or ration it behind some
+                    arbitrary struggle quota. It means don't let it be the first
+                    move. Three things work, and the strongest results come from
+                    mixing them.
+                </p>
+
+                <ol>
+                    <li>Talk it through first with <a href="/blog/ai-rubber-duck.html">an AI that only asks questions</a>, instead of one that answers them, until the gaps in your own thinking show.</li>
+                    <li>Set yourself the problem before you open an assistant: try to solve it on your own, on a clock, and bring in AI only once you have hit your limit.</li>
+                    <li>Or just open the editor and start writing code, badly, before you ask anything. The struggle of the blank file is not wasted time. It is the rep.</li>
+                </ol>
+
+                <p>
+                    Simple stuff. What matters is the order: struggle first,
+                    agent second, not the reverse. Ask for the
+                    answer once you have spent enough time with the problem to
+                    recognize a right one when you see it.
+                </p>
+
+                <h2>The industry still needs juniors who become seniors</h2>
+
+                <p>
+                    This is bigger than any one engineer's growth curve. I watched
+                    hiring managers cut junior roles hard over the past couple of
+                    years, on the theory that senior engineers plus AI could cover
+                    the gap. The industry is now relearning a simple fact: some of
+                    today's best senior engineers spent years earning it through
+                    exactly this kind of struggle. If nobody does that work now,
+                    there is no future senior standing behind them.
+                </p>
+
+                <p>
+                    If AI can already produce in weeks what took years to learn
+                    to produce by hand, keep using it. Just make sure some of
+                    what you ship, you built the hard way too. Juniors already
+                    have an edge here: fewer fixed opinions, faster to adopt a
+                    new tool. That same openness works just as well on a new
+                    platform, once the prompt box runs out of answers. Spend
+                    some of it on the
+                    editor as well as the agent, and ten years from now you
+                    will still be able to do the work without one.
+                </p>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Anatoliy Babushka · <a href="/blog/">All posts</a></span>
+            <p class="footer-disclaimer">The views here are my own, not those of any employer or client, past or present.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Keep the footer copyright year current.
+        var year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
