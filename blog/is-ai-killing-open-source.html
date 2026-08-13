@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG97HS57JW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG97HS57JW');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Is AI killing open source? - Anatoliy Babushka</title>
+    <meta name="description" content="Open source ran on two assumptions: developers visit your site, and published packages are safe. AI broke both. Here's what I've seen, and what I don't know.">
+    <meta name="author" content="Anatoliy Babushka">
+    <link rel="canonical" href="https://anatoliybabushka.com/blog/is-ai-killing-open-source.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anatoliybabushka.com/blog/is-ai-killing-open-source.html">
+    <meta property="og:title" content="Is AI killing open source?">
+    <meta property="og:description" content="Open source ran on two assumptions: developers visit your site, and published packages are safe. AI broke both. Here's what I've seen, and what I don't know.">
+    <meta property="og:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+    <meta property="og:image:width" content="732">
+    <meta property="og:image:height" content="1000">
+    <meta property="article:published_time" content="2026-08-13">
+    <meta property="article:author" content="Anatoliy Babushka">
+    <meta property="og:locale" content="en_US">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Is AI killing open source?">
+    <meta name="twitter:description" content="Open source ran on two assumptions: developers visit your site, and published packages are safe. AI broke both. Here's what I've seen, and what I don't know.">
+    <meta name="twitter:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/" class="site-name">Anatoliy Babushka</a>
+            <nav aria-label="Site navigation">
+                <a href="/blog/">← All posts</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <article aria-labelledby="post-title">
+
+                <h1 id="post-title">Is AI killing open source?</h1>
+
+                <p class="post-meta">
+                    <time datetime="2026-08-13">August 13, 2026</time> · 7 min read
+                </p>
+
+                <p>
+                    In January 2026, <a href="https://devclass.com/2026/01/08/tailwind-labs-lays-off-75-percent-of-its-engineers-thanks-to-brutal-impact-of-ai/">Adam Wathan revealed in a GitHub comment</a> that
+                    Tailwind Labs had cut 75 percent of its engineering team,
+                    three of four engineers, after an 80 percent revenue
+                    drop. He blamed the "brutal impact" AI has had on the
+                    business. Usage, meanwhile, was at an all-time
+                    high, about 75 million monthly npm downloads, running on
+                    51 percent of web projects per the 2025 State of CSS
+                    survey.
+                </p>
+
+                <p>
+                    AI didn't touch open source's code. It broke two
+                    assumptions the whole model depended on. Maintainers
+                    could fund the work because developers visited their
+                    sites. Companies could install packages without much
+                    worry because published code was assumed safe.
+                    Tailwind shows the first assumption failing. The npm
+                    supply-chain attacks show the second. What replaces
+                    them, I don't know.
+                </p>
+
+                <h2>The funding assumption just broke</h2>
+
+                <p>
+                    Tailwind's own numbers show what happened. <a href="https://byteiota.com/tailwind-css-layoffs-how-ai-broke-the-oss-business/">Docs traffic
+                    fell about 40 percent over two years</a> while downloads
+                    climbed to their highest point ever. Developers still use
+                    Tailwind as much as ever. They just stopped visiting
+                    the site.
+                </p>
+
+                <p>
+                    An AI assistant hands you the utility classes directly,
+                    in the editor, with no detour through the documentation.
+                    The business depended on that detour. The framework is
+                    free; Tailwind Labs makes its money selling component
+                    templates and UI kits, and the docs were where
+                    developers found out those exist. When nobody visits
+                    the docs, that income dries up, even while downloads
+                    keep climbing.
+                </p>
+
+                <p>
+                    Google AI Studio and Vercel have since stepped in with
+                    sponsorships, and that money is keeping the remaining
+                    team employed. But a sponsorship lasts only as long as
+                    the sponsor decides it's worth paying for, and that
+                    decision comes up again every year.
+                </p>
+
+                <p>
+                    AI-assisted development cut out the step where a
+                    developer opens your website. Nobody has built a new
+                    way to fund the work yet, for Tailwind or for anyone
+                    else.
+                </p>
+
+                <h2>The trust assumption just broke too</h2>
+
+                <p>
+                    The other assumption is trust in the supply chain, and it's had a rougher
+                    two years than the funding side. In September 2025, a
+                    self-replicating worm named Shai-Hulud started harvesting
+                    CI/CD secrets out of compromised npm packages. The first
+                    day's count was around 40, including several published by
+                    CrowdStrike; a week later, when <a href="https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem">CISA issued an
+                    alert</a>, the number had passed 500. Two months later,
+                    <a href="https://www.zscaler.com/blogs/security-research/shai-hulud-v2-poses-risk-npm-supply-chain">Shai-Hulud V2 compromised more than 700 npm packages</a> and
+                    spun up over 27,000 malicious GitHub repositories.
+                </p>
+
+                <p>
+                    Over a 48-hour window on May 11–12, 2026, a variant
+                    nicknamed <a href="https://www.mend.io/blog/mini-shai-hulud-is-back-172-npm-and-pypi-packages-compromised-in-latest-wave/">Mini Shai-Hulud compromised 172 packages across npm
+                    and PyPI</a>, 403 malicious versions in total. The
+                    compromised scopes included <code>@tanstack</code>,
+                    <code>@mistralai</code>, and <code>@opensearch-project</code>
+                    — the first single campaign to cross both registries.
+                    These are credential-theft worms
+                    exploiting the fact that a package manager treats
+                    "already published" as "safe to install."
+                </p>
+
+                <p>
+                    At the same time, AI has gotten very good at finding
+                    vulnerabilities nobody planted. <a href="https://github.com/securin-public/frontier-ai-cve-tracker">Google's
+                    Big Sleep had autonomously found about 20
+                    vulnerabilities</a> in widely used open-source software,
+                    mostly FFmpeg and ImageMagick, by August 2025. In June
+                    2025, an autonomous agent built by <a href="https://appsecsanta.com/research/ai-pentesting-agents-2026">XBOW topped
+                    HackerOne's leaderboards</a>, outranking thousands of
+                    human researchers with more than 1,000 vulnerability
+                    submissions. In January 2026, OpenSSL shipped 12
+                    zero-day vulnerabilities in a single patch release,
+                    <a href="https://aisle.com/blog/aisle-discovered-12-out-of-12-openssl-vulnerabilities">all 12 found by one AI system called AISLE</a>. Curl is
+                    on pace for roughly 50 published CVEs in 2026.
+                </p>
+
+                <p>
+                    Finding vulnerabilities at this scale isn't hypothetical
+                    anymore. It's already happened, repeatedly, in libraries
+                    half the internet depends on.
+                </p>
+
+                <p>
+                    AI now finds vulnerabilities far faster than AI, or humans, can
+                    correctly fix them. OpenSSL and curl's
+                    numbers show discovery running far ahead of the pipelines
+                    that are supposed to fix what it finds.
+                </p>
+
+                <p>
+                    I've watched that gap turn into cost firsthand, on teams
+                    working under FedRAMP or SOC 2. What used to be routine
+                    hygiene, a Dependabot PR here, a version bump there, is
+                    now a standing line item. It's someone's job, every
+                    sprint, triaging which of the week's flagged packages are
+                    real. A lot of my own team's time now goes into that gap
+                    between finding a vulnerability and actually fixing it.
+                </p>
+
+                <h2>The fixes are their own problem now</h2>
+
+                <p>
+                    This part I know firsthand, and it's why I don't think
+                    the problem stops at finding more vulnerabilities. On
+                    the team I lead, we've been through an ocean of
+                    AI-generated pull requests that were supposed to close a
+                    flagged CVE and didn't.
+                </p>
+
+                <p>
+                    The same pattern keeps coming up. The PR bumps a version number in
+                    <code>package.json</code> while the vulnerable code path
+                    is still reachable underneath it. Or it fixes the flagged
+                    issue but breaks the product, because the model reasoned
+                    about the CVE in isolation from how the dependency was
+                    being used in our code.
+                </p>
+
+                <p>
+                    That's the same blind spot I've
+                    <a href="/blog/when-to-rewrite-working-code.html">written about with full rewrites</a>:
+                    an agent producing something clean and plausible without
+                    carrying forward the reasoning that made the original
+                    correct. Review catches most of these before they ship.
+                    Catching them isn't free, and every one that slips
+                    through creates a second incident on top of the first.
+                </p>
+
+                <p>
+                    It got bad enough that code owners brought it up in
+                    meetings and asked people to stop opening these PRs
+                    altogether. Reviewing them more carefully wasn't the
+                    answer, because the assistant writing the fixes didn't
+                    understand the code well enough to get them right. That's a step past
+                    <a href="/blog/ai-and-early-career-growth.html">engineers leaning on AI before they've earned the judgment</a>
+                    to check it. This is senior engineers making the same
+                    call about a narrower, higher-stakes task.
+                </p>
+
+                <h2>My own library hasn't noticed any of this</h2>
+
+                <p>
+                    None of this shows up in the library I maintain.
+                    No unusual PR volume, no new attack surface, no funding question,
+                    because there was never funding to lose. So far this is
+                    hitting big infrastructure like Tailwind and heavily
+                    used ecosystems like npm — projects big enough to be
+                    worth attacking, or with enough revenue to be worth
+                    undercutting. A small library
+                    maintained by one person for the reward of maintaining it
+                    isn't a target, at least not yet.
+                </p>
+
+                <p>
+                    One thing did change, just this morning. I asked one of
+                    the newest AI models to go through the codebase,
+                    the same question I had put to earlier models
+                    more than once, and they always came back with some
+                    version of "everything looks good." This one found
+                    almost 20 real improvements. Same code, same question,
+                    much better model. The vulnerability numbers earlier in
+                    this post come from that same jump in capability,
+                    applied to much bigger codebases.
+                </p>
+
+                <h2>What comes after: one hope and three guesses</h2>
+
+                <p>
+                    There's an obvious objection. Open source has been
+                    declared dead before, and it has survived every time.
+                    That's fair.
+                </p>
+
+                <p>
+                    Funding has always been precarious;
+                    ask any maintainer who's begged users to sponsor a daily
+                    dependency. Package registries have carried malware since
+                    long before language models existed. What's different is
+                    that both broke at the same time, and at the scale of
+                    whole ecosystems rather than single projects. I can't
+                    point to another time that happened.
+                </p>
+
+                <p>
+                    I don't know what comes after that. Whatever comes next,
+                    I hope it keeps the best thing open source gave this
+                    industry: someone without capital, or a company behind
+                    them, could build something that mattered, in public, for free.
+                    That's worth protecting no matter how the funding
+                    problem gets solved.
+                </p>
+
+                <p>
+                    Beyond that, I have three guesses. I'm not confident in
+                    any of them:
+                </p>
+
+                <ol>
+                    <li>The gap closes from the fixing side. Finding vulnerabilities at scale is already solved — Big Sleep, XBOW, and AISLE proved that. If fixing them correctly catches up to that pace, sneaking a new one in gets genuinely hard, and the race tips toward defense instead of staying even.</li>
+                    <li>A new language or ecosystem emerges, built from the ground up for AI-generated and AI-reviewed code, with supply-chain trust as a native feature.</li>
+                    <li>The industry regresses toward something like the pre-open-source norm. Companies protect the code that's actually worth money. What stays public is the hobby project, published by someone who never expected it to pay them back.</li>
+                </ol>
+
+                <p>
+                    Which one wins depends on decisions nobody's made yet:
+                    how registries verify publishers, whether AI vendors
+                    treat fixing vulnerabilities as a product worth building.
+                    It also depends on whether Tailwind turns out to be the
+                    outlier or the first of many. I don't
+                    have that answer yet. Neither, as far as I can tell, does
+                    anyone else.
+                </p>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Anatoliy Babushka · <a href="/blog/">All posts</a></span>
+            <p class="footer-disclaimer">The views here are my own, not those of any employer or client, past or present.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Keep the footer copyright year current.
+        var year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
