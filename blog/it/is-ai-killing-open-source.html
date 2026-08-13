@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="it">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-WG97HS57JW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-WG97HS57JW');
+    </script>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>L'IA sta uccidendo l'open source? - Anatoliy Babushka</title>
+    <meta name="description" content="L'open source si reggeva su due assunti: gli sviluppatori visitano il sito, i pacchetti sono sicuri. L'IA li ha rotti entrambi. Cosa ho visto e cosa non so.">
+    <meta name="author" content="Anatoliy Babushka">
+    <link rel="canonical" href="https://anatoliybabushka.com/blog/it/is-ai-killing-open-source.html">
+    <link rel="alternate" hreflang="en" href="https://anatoliybabushka.com/blog/is-ai-killing-open-source.html">
+    <link rel="alternate" hreflang="it" href="https://anatoliybabushka.com/blog/it/is-ai-killing-open-source.html">
+    <link rel="alternate" hreflang="uk" href="https://anatoliybabushka.com/blog/ua/is-ai-killing-open-source.html">
+    <link rel="alternate" hreflang="x-default" href="https://anatoliybabushka.com/blog/is-ai-killing-open-source.html">
+
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://anatoliybabushka.com/blog/it/is-ai-killing-open-source.html">
+    <meta property="og:title" content="L'IA sta uccidendo l'open source?">
+    <meta property="og:description" content="L'open source si reggeva su due assunti: gli sviluppatori visitano il sito, i pacchetti sono sicuri. L'IA li ha rotti entrambi. Cosa ho visto e cosa non so.">
+    <meta property="og:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+    <meta property="og:image:width" content="732">
+    <meta property="og:image:height" content="1000">
+    <meta property="article:published_time" content="2026-08-13">
+    <meta property="article:author" content="Anatoliy Babushka">
+    <meta property="og:locale" content="it_IT">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:locale:alternate" content="uk_UA">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="L'IA sta uccidendo l'open source?">
+    <meta name="twitter:description" content="L'open source si reggeva su due assunti: gli sviluppatori visitano il sito, i pacchetti sono sicuri. L'IA li ha rotti entrambi. Cosa ho visto e cosa non so.">
+    <meta name="twitter:image" content="https://anatoliybabushka.com/Anatoliy_Babushka.webp">
+
+    <link rel="preload" href="/fonts/inter-latin-var.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="/blog/blog.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="wrap">
+            <a href="/" class="site-name">Anatoliy Babushka</a>
+            <nav aria-label="Site navigation">
+                <a href="/blog/it/">← Tutti gli articoli</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="wrap">
+
+            <article aria-labelledby="post-title">
+
+                <h1 id="post-title">L'IA sta uccidendo l'open source?</h1>
+
+                <p class="post-meta">
+                    <time datetime="2026-08-13">13 agosto 2026</time> · 8 min di lettura
+                </p>
+
+                <p>
+                    A gennaio 2026 <a href="https://devclass.com/2026/01/08/tailwind-labs-lays-off-75-percent-of-its-engineers-thanks-to-brutal-impact-of-ai/">Adam Wathan ha rivelato in un commento
+                    su GitHub</a> che Tailwind Labs aveva tagliato il 75% del
+                    team di ingegneria, tre ingegneri su quattro, dopo un
+                    calo dei ricavi dell'80%. La colpa, secondo lui, è
+                    dell'impatto "brutale" che l'IA ha avuto sul business.
+                    Intanto l'utilizzo era ai massimi storici: circa 75
+                    milioni di download mensili su npm e una presenza nel
+                    51% dei progetti web secondo la survey State of CSS del
+                    2025.
+                </p>
+
+                <p>
+                    L'IA non ha toccato il codice dell'open source: ha rotto
+                    i due assunti su cui si reggeva l'intero modello. I
+                    maintainer riuscivano a finanziare il lavoro perché gli
+                    sviluppatori passavano dai loro siti. Le aziende
+                    installavano i pacchetti senza farsi troppe domande
+                    perché il codice pubblicato si dava per sicuro. Il caso
+                    Tailwind mostra che il primo assunto ha ceduto; gli
+                    attacchi alla supply chain di npm mostrano che è caduto
+                    anche il secondo. Cosa li sostituirà, non lo so.
+                </p>
+
+                <h2>L'assunto sui finanziamenti è appena saltato</h2>
+
+                <p>
+                    Per capire cosa è successo bastano i numeri di Tailwind.
+                    <a href="https://byteiota.com/tailwind-css-layoffs-how-ai-broke-the-oss-business/">Il
+                    traffico verso la documentazione è calato di circa il 40%
+                    in due anni</a>, mentre i download toccavano il massimo
+                    di sempre. Gli sviluppatori usano Tailwind quanto prima;
+                    hanno solo smesso di passare dal sito.
+                </p>
+
+                <p>
+                    Un assistente IA ti dà le utility class direttamente
+                    nell'editor, senza passare dalla documentazione. Ed era
+                    proprio su quel passaggio che si reggeva il business: il
+                    framework è gratuito, Tailwind Labs guadagna vendendo
+                    template di componenti e UI kit, e la documentazione era
+                    il posto dove gli sviluppatori scoprivano che esistono.
+                    Se nessuno passa più di lì, quei ricavi si prosciugano
+                    anche se i download continuano a salire.
+                </p>
+
+                <p>
+                    Da allora sono arrivate le sponsorizzazioni di Google AI
+                    Studio e Vercel, ed è quel denaro a tenere al lavoro il
+                    team rimasto. Ma una sponsorizzazione dura finché lo
+                    sponsor ritiene che valga la pena pagarla, e quella
+                    decisione torna sul tavolo ogni anno.
+                </p>
+
+                <p>
+                    Lo sviluppo assistito dall'IA ha eliminato il momento in
+                    cui uno sviluppatore apre il tuo sito. Un modo nuovo per
+                    finanziare questo lavoro non l'ha ancora costruito
+                    nessuno, né per Tailwind né per gli altri.
+                </p>
+
+                <h2>Ed è saltato anche l'assunto sulla fiducia</h2>
+
+                <p>
+                    L'altro assunto è la fiducia nella supply chain, che ha
+                    passato due anni ancora più duri del fronte dei
+                    finanziamenti. A settembre 2025 un worm autoreplicante
+                    chiamato Shai-Hulud ha iniziato a raccogliere segreti
+                    CI/CD dai pacchetti npm compromessi. Il primo giorno se
+                    ne contavano circa 40, tra cui diversi pubblicati da
+                    CrowdStrike; una settimana dopo, quando
+                    <a href="https://www.cisa.gov/news-events/alerts/2025/09/23/widespread-supply-chain-compromise-impacting-npm-ecosystem">CISA
+                    ha emesso un alert</a>, erano già oltre 500. Due mesi più
+                    tardi <a href="https://www.zscaler.com/blogs/security-research/shai-hulud-v2-poses-risk-npm-supply-chain">Shai-Hulud V2 ha compromesso più di 700
+                    pacchetti npm</a> e messo in piedi oltre 27.000
+                    repository GitHub malevoli.
+                </p>
+
+                <p>
+                    Nell'arco di 48 ore, tra l'11 e il 12 maggio 2026, una
+                    variante soprannominata <a href="https://www.mend.io/blog/mini-shai-hulud-is-back-172-npm-and-pypi-packages-compromised-in-latest-wave/">Mini Shai-Hulud ha compromesso 172
+                    pacchetti tra npm e PyPI</a>, 403 versioni malevole in
+                    totale. Tra gli scope colpiti c'erano
+                    <code>@tanstack</code>, <code>@mistralai</code> e
+                    <code>@opensearch-project</code>: è la prima volta che
+                    una singola campagna attraversa entrambi i registry. Sono
+                    worm che rubano credenziali, e sfruttano il fatto che per
+                    un package manager "già pubblicato" equivale a "sicuro da
+                    installare".
+                </p>
+
+                <p>
+                    Nel frattempo l'IA è diventata molto brava a trovare
+                    vulnerabilità che nessuno ha piazzato apposta. Ad agosto
+                    2025 <a href="https://github.com/securin-public/frontier-ai-cve-tracker">Big Sleep di Google aveva già trovato in
+                    autonomia circa 20 vulnerabilità</a> in software open
+                    source molto diffuso, soprattutto FFmpeg e ImageMagick.
+                    A giugno 2025 un agente autonomo costruito da <a href="https://appsecsanta.com/research/ai-pentesting-agents-2026">XBOW
+                    è arrivato in cima alle classifiche di HackerOne</a>,
+                    davanti a migliaia di ricercatori umani, con oltre 1.000
+                    segnalazioni di vulnerabilità. A gennaio 2026 OpenSSL ha
+                    corretto 12 vulnerabilità zero-day in un'unica release
+                    di patch, <a href="https://aisle.com/blog/aisle-discovered-12-out-of-12-openssl-vulnerabilities">tutte e 12 trovate da un solo sistema IA chiamato
+                    AISLE</a>. E curl, di questo passo, chiuderà il 2026 con
+                    una cinquantina di CVE pubblicate.
+                </p>
+
+                <p>
+                    Trovare vulnerabilità su questa scala non è più
+                    un'ipotesi. È già successo, più volte, in librerie da
+                    cui dipende metà di internet.
+                </p>
+
+                <p>
+                    Oggi l'IA trova vulnerabilità molto più in fretta di
+                    quanto l'IA stessa, o gli esseri umani, riescano a
+                    correggerle bene. I numeri di OpenSSL e curl dicono
+                    proprio questo: la scoperta corre molto più avanti delle
+                    pipeline che dovrebbero sistemare quello che trova.
+                </p>
+
+                <p>
+                    Quel divario l'ho visto trasformarsi in costi con i miei
+                    occhi, su team soggetti a FedRAMP o SOC 2. Quella che
+                    era manutenzione di routine, una PR di Dependabot qui,
+                    un bump di versione là, oggi è una voce di costo fissa.
+                    Ogni sprint c'è qualcuno il cui lavoro è capire quali
+                    dei pacchetti segnalati in settimana sono un problema
+                    vero. Una buona parte del tempo del mio team se ne va
+                    proprio lì, tra il momento in cui una vulnerabilità
+                    viene trovata e quello in cui viene corretta davvero.
+                </p>
+
+                <h2>Ora il problema sono le correzioni</h2>
+
+                <p>
+                    Questa parte la conosco in prima persona, ed è il motivo
+                    per cui non credo che il problema sia solo trovare più
+                    vulnerabilità. Nel team che guido abbiamo visto passare
+                    un mare di pull request generate dall'IA che avrebbero
+                    dovuto chiudere una CVE segnalata e non lo facevano.
+                </p>
+
+                <p>
+                    Lo schema è sempre lo stesso. La PR aggiorna il numero
+                    di versione in <code>package.json</code>, ma sotto il
+                    code path vulnerabile resta raggiungibile. Oppure
+                    risolve il problema segnalato e rompe il prodotto,
+                    perché il modello ha ragionato sulla CVE senza guardare
+                    come quella dipendenza veniva usata davvero nel nostro
+                    codice.
+                </p>
+
+                <p>
+                    È lo stesso punto cieco di cui ho
+                    <a href="/blog/it/when-to-rewrite-working-code.html">già scritto a proposito delle riscritture complete</a>:
+                    un agente produce qualcosa di pulito e plausibile, ma
+                    non si porta dietro il ragionamento che rendeva corretto
+                    l'originale. La revisione ne ferma la maggior parte
+                    prima che arrivino in produzione. Fermarle però costa, e
+                    ognuna che passa crea un secondo incidente che si somma
+                    al primo.
+                </p>
+
+                <p>
+                    Si è arrivati al punto che i code owner hanno sollevato
+                    la questione in riunione, chiedendo di smettere del
+                    tutto di aprire PR di questo tipo. Rivederle con più
+                    attenzione non era la risposta: l'assistente che
+                    scriveva le correzioni non capiva il codice abbastanza a
+                    fondo da farle bene. È un passo oltre
+                    <a href="/blog/it/ai-and-early-career-growth.html">gli ingegneri che si appoggiano all'IA prima di essersi guadagnati il giudizio</a>
+                    per controllarla. Qui sono ingegneri senior a fare la
+                    stessa scelta, su un compito più ristretto e con una
+                    posta in gioco più alta.
+                </p>
+
+                <h2>La mia libreria non si è accorta di niente</h2>
+
+                <p>
+                    Nella libreria che mantengo, di tutto questo non si vede
+                    traccia. Nessun volume anomalo di PR, nessuna nuova
+                    superficie d'attacco, nessun problema di finanziamento,
+                    perché un finanziamento da perdere non c'è mai stato.
+                    Per ora a pagare sono le grandi infrastrutture come
+                    Tailwind e gli ecosistemi molto usati come npm: progetti
+                    abbastanza grandi perché valga la pena attaccarli, o con
+                    ricavi abbastanza alti perché valga la pena eroderli.
+                    Una piccola libreria che una persona sola mantiene per
+                    il gusto di mantenerla non è un bersaglio, almeno per
+                    ora.
+                </p>
+
+                <p>
+                    Una cosa però è cambiata, proprio stamattina. Ho chiesto
+                    a uno dei modelli IA più recenti di passare in rassegna
+                    la codebase. È la stessa domanda che avevo fatto più
+                    volte ai modelli precedenti, e la risposta era sempre
+                    una variante di "va tutto bene". Questo ha trovato quasi
+                    20 miglioramenti reali. Stesso codice, stessa domanda,
+                    modello molto più capace. I numeri sulle vulnerabilità
+                    citati più sopra vengono dallo stesso salto di capacità,
+                    applicato a codebase molto più grandi.
+                </p>
+
+                <h2>Cosa viene dopo: una speranza e tre ipotesi</h2>
+
+                <p>
+                    C'è un'obiezione ovvia: l'open source è stato dato per
+                    morto più volte, ed è sempre sopravvissuto. È
+                    un'obiezione fondata.
+                </p>
+
+                <p>
+                    I finanziamenti sono sempre stati precari: chiedete a un
+                    maintainer qualsiasi che abbia supplicato gli utenti di
+                    sponsorizzare una dipendenza usata ogni giorno. E i
+                    registry di pacchetti ospitavano malware ben prima che
+                    esistessero i language model. La differenza è che
+                    stavolta sono saltati entrambi gli assunti insieme, e su
+                    scala di interi ecosistemi, non di singoli progetti. Non
+                    saprei indicare un altro momento in cui sia successo.
+                </p>
+
+                <p>
+                    Cosa verrà dopo, non lo so. Ma qualunque cosa arrivi,
+                    spero che conservi la cosa migliore che l'open source ha
+                    dato a questo settore: la possibilità, per qualcuno
+                    senza capitale e senza un'azienda alle spalle, di
+                    costruire qualcosa di importante, in pubblico, gratis.
+                    Vale la pena proteggerla, comunque si risolva il
+                    problema dei finanziamenti.
+                </p>
+
+                <p>
+                    Oltre a questo ho tre ipotesi, e non sono sicuro di
+                    nessuna delle tre:
+                </p>
+
+                <ol>
+                    <li>Il divario si chiude dal lato delle correzioni. Trovare vulnerabilità su larga scala è un problema già risolto: lo hanno dimostrato Big Sleep, XBOW e AISLE. Se anche correggerle bene arriva a quel ritmo, infilare di nascosto una vulnerabilità nuova diventa davvero difficile, e la corsa si sposta a favore della difesa invece di restare in equilibrio.</li>
+                    <li>Nasce un nuovo linguaggio o un nuovo ecosistema, progettato da zero per codice generato e revisionato dall'IA, con la fiducia nella supply chain come funzionalità nativa.</li>
+                    <li>Il settore torna verso qualcosa di simile alla norma precedente all'open source: le aziende proteggono il codice che vale davvero dei soldi, e in pubblico resta il progetto hobbistico di chi non si è mai aspettato un ritorno economico.</li>
+                </ol>
+
+                <p>
+                    Quale delle tre prevarrà dipende da decisioni che
+                    nessuno ha ancora preso: come i registry verificheranno
+                    chi pubblica, se i fornitori di IA tratteranno la
+                    correzione delle vulnerabilità come un prodotto che vale
+                    la pena costruire. E dipende da come finirà Tailwind:
+                    eccezione isolata o primo di molti casi. Io quella
+                    risposta non ce l'ho ancora. E, per quanto ne so, non ce
+                    l'ha nessun altro.
+                </p>
+
+            </article>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="wrap">
+            <span>© <span id="year">2026</span> Anatoliy Babushka · <a href="/blog/it/">Tutti gli articoli</a></span>
+            <p class="footer-disclaimer">Le opinioni espresse qui sono mie personali, non quelle di un datore di lavoro o cliente, passato o presente.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Keep the footer copyright year current.
+        var year = document.getElementById('year');
+        if (year) year.textContent = new Date().getFullYear();
+    </script>
+
+</body>
+</html>
