@@ -140,7 +140,7 @@ post, if one exists). Apply this substitution table on top of the normal steps:
 | `<html lang="...">` | `en` | `it` | `uk` (not `ua` — that's only the folder name) |
 | Back-link nav text / href | `← All posts` → `/blog/` | `← Tutti gli articoli` → `/blog/it/` | `← Усі статті` → `/blog/ua/` |
 | Footer link text | `All posts` | `Tutti gli articoli` | `Усі статті` |
-| Footer disclaimer | "The views here are my own, not those of any employer or client, past or present." | "Le opinioni espresse qui sono mie personali, non quelle di un datore di lavoro o cliente, passato o presente." | "Погляди, викладені тут, особисто мої, а не мого роботодавця чи клієнта, теперішнього чи колишнього." |
+| Footer disclaimer | "The views here are my own, not those of any employer or client, past or present." | "Le opinioni espresse qui sono mie personali, non quelle di un datore di lavoro o cliente, passato o presente." | "Погляди, викладені тут, — особисто мої, а не мого роботодавця чи клієнта, теперішнього чи колишнього." |
 | `og:locale` | `en_US` | `it_IT` | `uk_UA` |
 | Canonical / `og:url` base | `/blog/` | `/blog/it/` | `/blog/ua/` |
 | Date example format | `January 1, 2026` | `1 gennaio 2026` | `1 січня 2026 р.` |
